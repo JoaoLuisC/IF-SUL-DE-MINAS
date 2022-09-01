@@ -3,18 +3,12 @@
 #include <time.h>
 
 int testeATG(char base[]){
-	
 	int i;
-	
 	for(i=0;i<100;i++){		
 		if(base[i]=='a' && base[i+1]=='t' && base[i+2]=='g')
 			return 1;
 	}
-		
-	
-	
 	return 2;
-	
 }	
 
 int main(){
@@ -36,11 +30,3 @@ int main(){
 	
 	return 0;
 }
-
-			
-/*
-
-if(base[i]=='a' && base[i+1]=='t' && base[i+2]=='g'){
-			return 1;
-
-*/
