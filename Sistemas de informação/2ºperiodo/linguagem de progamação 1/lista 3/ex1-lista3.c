@@ -162,7 +162,7 @@ int menu(){
 int main(){
 	
 	
-	int bandas[100];
+	tbanda bandas[100];
 	int opcao,busca;
 	char genBusca[40],nomeBusca[40];
 	
