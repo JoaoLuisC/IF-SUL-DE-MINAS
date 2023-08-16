@@ -1,0 +1,24 @@
+body{
+    background-color: rgba(177, 177, 177, 0.685);
+    color: black;
+    text-align: center;
+}
+
+p {
+    color: brown;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+div{
+    background-color: rgb(125, 182, 27);
+    padding: 0.5em;
+}
+
+h4,h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: aquamarine;
+    padding: 1em;
+}
+
