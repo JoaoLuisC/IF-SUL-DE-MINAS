@@ -1,0 +1,24 @@
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello ecplise World!");
+				
+		User pessoa = new User();
+		pessoa.setNome("Joao");
+		pessoa.setCPF("050");
+		pessoa.setFriends(null);
+		
+		List<String> friends = pessoa.getFriends();
+		friends.add("joao luis");
+		
+		
+		System.out.println("Lista de amigos");
+		for(String friendName : pessoa.getFriends()) {
+			System.out.println(friendName);		
+		}
+	}
+
+}

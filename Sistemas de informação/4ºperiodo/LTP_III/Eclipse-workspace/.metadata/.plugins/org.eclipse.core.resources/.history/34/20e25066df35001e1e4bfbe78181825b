@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class User {
+	private String nome;
+	private String CPF;
+	private List<String> friends; 
+	
+	public User() {
+		friends = new ArrayList<>();
+		friends.add("Luiza");
+		friends.add("Rosana");
+		friends.add("Noé");
+	}
+
+	public void addFriend() {
+		this.friends.add(nome);
+	}
+	
+ 	public List<String> getFriends(){
+		
+		List<String> friendsCopy = new ArrayList<>();
+		
+		for (String friendName : friendsCopy) {
+			friendsCopy.add(friendName);
+		}
+		
+		return friendsCopy;
+	}
+	
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public String getCPF() {
+		return CPF;
+	}
+	public void setCPF(String CPF) {
+		
+		if(CPF == null || CPF.equals("")) {
+			return;
+		}else {
+			
+			this.CPF = CPF;
+		}
+		
+		
+	}
+	
+	
+}
