@@ -5,10 +5,14 @@ import java.util.Scanner;
 
 public class BubbleSort {
     
+    public static long comparacao = 0 ,troca = 0;
+    
     public static void bSort(int array[]){
      for(int fase=1;fase<array.length;fase++){
         for(int comp=0;comp<array.length-fase;comp++){
+           comparacao++;//contando comparações
            if(array[comp]>array[comp+1]){
+              troca++; //contando trocas
               int temp = array[comp];
               array[comp] = array[comp+1];
               array[comp+1] = temp;
@@ -24,9 +28,7 @@ public class BubbleSort {
             JavaSorts.printArray(array);//
             scanner.nextLine();// pause
         for(int comp=0;comp<array.length-fase;comp++){
-            System.out.println
-              ("Comparando "+array[comp]+ " com " + 
-                                      array[comp+1]);//
+            System.out.println("Comparando "+array[comp]+ " com " + array[comp+1]);//
             if(array[comp]>array[comp+1]){
                 System.out.println("Trocou");  //
               int temp = array[comp];

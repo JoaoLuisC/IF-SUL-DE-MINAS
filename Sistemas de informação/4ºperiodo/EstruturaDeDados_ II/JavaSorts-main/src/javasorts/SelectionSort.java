@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class SelectionSort {
     
+    public static long comparacao = 0 ,troca = 0;
     
     private static int indexMinArray(int array [],int posAtual){   //menor valor do Array
        
@@ -11,11 +12,9 @@ public class SelectionSort {
             
         //loop para percorrer o array e achar o menor valor
         for(int i = posAtual; i<array.length; i++){
-            
+            comparacao++;//conta as comparações
             if(array[i] < array[K])//se o array na posição atual for menor q a posição atual ele altera a 
-                 K = i;            //variavel K para o novo menor
-                         
-            
+                 K = i;            //variavel K para o novo menor   
         }
       
         return K;
@@ -28,7 +27,7 @@ public class SelectionSort {
             int k = indexMinArray(array, i);
             
             //trocar valores de i com k
-            
+            troca++;//conta as trocas
             int temp = array[i];
             array[i] = array[k];
             array[k] = temp;

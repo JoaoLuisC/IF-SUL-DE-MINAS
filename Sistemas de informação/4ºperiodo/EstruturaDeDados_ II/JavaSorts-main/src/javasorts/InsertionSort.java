@@ -4,18 +4,21 @@ import java.util.Scanner;
 
 public class InsertionSort {
 
+    public static long comparacao = 0 ,deslocamento = 0;    
+    
     private static void insert(int array[], int i) {
 
         int eleito = i;
         int comp = i - 1;
 
         while (comp >= 0 && eleito < array[comp]) {//deslocar o eleito para tras
-
+            comparacao++;//contando comparações
             array[comp + 1] = array[comp];//deslocando
+            deslocamento++;//contando deslocamentos
             comp--;
 
         }
-
+        comparacao++;//contando comparação de saida
         //inserindo eleito na posição correta
         array[comp + 1] = eleito;
     }
@@ -50,7 +53,6 @@ public class InsertionSort {
         scanner.nextLine();// pausa
     }// fim insert
     //-------------------------
-
     public static void iSortComentado(int array[]) {
         for (int i = 1; i < array.length; i++) {
             System.out.println("Fase " + i);
