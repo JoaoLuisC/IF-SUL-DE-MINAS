@@ -65,14 +65,10 @@ public class Produto {
 		return precoFinal;
 	}
 
-	// metodo de StringFormat para devolver strings formatadas
-	public String formatarProduto() {
-		return String.format("Produto: %s | Preço Custo: %.2f | Margem Lucro: %.0f%%" 
-														,nomeProduto, precoCusto,margemLucro);
-	}
 	
-	// Arreguei pro GPT se n eu ia fica loco
-	public String formatarProduto2() {
+	
+	// metodo de StringFormat para devolver strings formatadas(usei o gpt nesse metodo)
+	public String formatarProduto() {
 	    StringBuilder impostosFormatados = new StringBuilder();
 	    if (impostos != null && !impostos.isEmpty()) {
 	        impostosFormatados.append("   Impostos: ");
@@ -118,7 +114,7 @@ public class Produto {
 	    do {
 	    	System.out.println("Escolha o Imposto");
 	    	
-	    	impostosSelecionados.add(Menu.menuImpostosInserir(impostos));
+	    	impostosSelecionados.add(Menu.menuImpostosInserirProduto(impostos));
 		    	
 	    	numImpostos --;
 	    	
@@ -132,4 +128,43 @@ public class Produto {
 		return produtos;
 
 	}
+
+	public static Produto atualizaProdutos(Produto produtoATT,ArrayList<Imposto> impostos ) {
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);		
+		
+		ArrayList<Imposto> impostosSelecionados = new ArrayList<>();
+		
+		System.out.println("Digite o nome do Produto:\n");
+		String nomeProduto = scanner.nextLine();
+		produtoATT.setNomeProduto(nomeProduto);
+
+		System.out.println("Digite o Preço de Custo do Produto:\n");
+		double precoCusto = scanner.nextDouble();
+		produtoATT.setPrecoCusto(precoCusto);
+
+		System.out.println("Digite a Margem de Lucro em porcentagem do Produto:\n ");
+		double margemLucro = scanner.nextDouble();
+		produtoATT.setMargemLucro(margemLucro);
+		
+		System.out.println("Digite o número do impostos para este produto:");
+	    int numImpostos = scanner.nextInt();
+	    do {
+	    	System.out.println("Escolha o Imposto");
+	    	
+	    	impostosSelecionados.add(Menu.menuImpostosInserirProduto(impostos));
+		    	
+	    	numImpostos --;
+	    	
+		} while (numImpostos!=0);
+		
+	    produtoATT.setImpostos(impostosSelecionados);
+
+		return produtoATT;
+
+	}
+
+
+
+
 }

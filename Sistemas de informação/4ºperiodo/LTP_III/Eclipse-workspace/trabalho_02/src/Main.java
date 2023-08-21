@@ -35,7 +35,7 @@ public class Main {
 				break;
 				
 				case 4: 
-					
+					Menu.menuAtualizaProduto(produtos, impostos);
 				break;
 				
 				case 5: 

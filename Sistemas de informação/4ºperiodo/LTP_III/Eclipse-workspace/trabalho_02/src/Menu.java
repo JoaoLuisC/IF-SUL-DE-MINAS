@@ -82,7 +82,7 @@ public class Menu {
 		   //System.out.println(i +"-"+produto.formatarProdutoMenu());
 			
 		   //teste
-		   System.out.println(i +"-"+produto.formatarProduto2());
+		   System.out.println(i +"-"+produto.formatarProduto());
 		   
 		   i++;
 		}
@@ -101,9 +101,9 @@ public class Menu {
 		System.out.println("\n");
 	}
 
-	//Menu Insere Produto
+	//Menu Insere Imposto no Produto
 	
-	public static Imposto menuImpostosInserir(ArrayList<Imposto> impostos) {
+	public static Imposto menuImpostosInserirProduto(ArrayList<Imposto> impostos) {
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		
@@ -120,7 +120,40 @@ public class Menu {
 		return impostos.get(op);
 	}
 	
-
+	//Menu atualiza Produto
+	
+	public static ArrayList<Produto> menuAtualizaProduto(ArrayList<Produto> produtos,ArrayList<Imposto> impostos) {
+		
+		int produtoIndex = menuAttProdutoAux(produtos);
+		
+		Produto produtoAtualizando = produtos.get(produtoIndex);
+		
+		produtos.set(produtoIndex, Produto.atualizaProdutos(produtoAtualizando, impostos));
+		
+		return produtos;
+	}
+	
+	public static int menuAttProdutoAux(ArrayList<Produto> produtos) {
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		
+		int i = 1,op = 0;
+		
+		System.out.println("Escolha um produto para modificar: ");
+		
+		for (Produto produto : produtos) {	
+			   System.out.println(i +"-"+produto.formatarProduto());
+			   i++;
+			}
+		op = scanner.nextInt();
+		
+		op--;
+		
+		
+		return op;
+	}
+	
+	//Menu atualiza Imposto
 	
 
 }
