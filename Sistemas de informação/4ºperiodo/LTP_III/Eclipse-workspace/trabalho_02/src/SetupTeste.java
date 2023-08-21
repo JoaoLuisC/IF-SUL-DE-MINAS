@@ -26,12 +26,12 @@ public class SetupTeste {
 		
         ArrayList<Produto> produtos = new ArrayList<>();
 
-        Produto arroz = new Produto(7.00, "Arroz", 0.20);
-        Produto feijao = new Produto(7.00, "Feijão", 0.25);
-        Produto carne = new Produto(7.00, "Carne", 0.35);
-        Produto cerveja = new Produto(7.00, "Cerveja", 0.30);
+        Produto arroz = new Produto(7.00, "Arroz", 20);
+        Produto feijao = new Produto(7.00, "Feijão", 25);
+        Produto carne = new Produto(7.00, "Carne", 35);
+        Produto cerveja = new Produto(7.00, "Cerveja", 30);
         Produto gas = new Produto(7.00, "Gás", 0.15);
-        Produto gasolina = new Produto(7.00, "Gasolina", 0.15);
+        Produto gasolina = new Produto(7.00, "Gasolina", 15);
         
         produtos.add(gasolina);
         produtos.add(arroz);

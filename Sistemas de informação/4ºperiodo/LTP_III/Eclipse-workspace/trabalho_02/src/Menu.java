@@ -97,7 +97,24 @@ public class Menu {
 		System.out.println("\n");
 	}
 
+	//Menu Insere Produto
 	
+	public static Imposto menuImpostosInserir(ArrayList<Imposto> impostos) {
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		
+		int i = 1,op = 0;
+				
+		for (Imposto imposto : impostos) {	
+			   System.out.println(i +"-"+imposto.formatarImposto());
+			   i++;
+			}
+		op = scanner.nextInt();
+		
+		op--;
+		
+		return impostos.get(op);
+	}
 	
 
 	

@@ -6,7 +6,7 @@ public class Produto {
 	private double precoCusto;
 	private String nomeProduto;
 	private double margemLucro;
-	private ArrayList<Imposto> imposto;
+	private ArrayList<Imposto> impostos;
 
 	//CONSTRUTOR
 	public Produto() {
@@ -32,13 +32,13 @@ public class Produto {
 	public double getMargemLucro() {
 		return margemLucro;
 	}
-	public ArrayList<Imposto> getImposto() {
-		return imposto;
+	public ArrayList<Imposto> getImpostos() {
+		return impostos;
 	}
 	
 	//SETTERS de Produtos
-	public void setImposto(ArrayList<Imposto> imposto) {
-		this.imposto = imposto;
+	public void setImpostos(ArrayList<Imposto> impostos) {
+		this.impostos = impostos;
 	}
 	public void setPrecoCusto(double precoCusto) {
 		this.precoCusto = precoCusto;
@@ -77,13 +77,11 @@ public class Produto {
 	}
 	
 	//metodo para inserir os dados dos produtos
-	public static ArrayList<Produto> insereProdutos(ArrayList<Produto> produtos) {
+	public static ArrayList<Produto> insereProdutos(ArrayList<Produto> produtos,ArrayList<Imposto> impostos ) {
 		@SuppressWarnings("resource")
-		Scanner scanner = new Scanner(System.in);
-		//int quantidadeImpostos;
+		Scanner scanner = new Scanner(System.in);		
 		
-		//System.out.println("Digite a quantidade de impostos para o produto q sera adicionado: ");
-		//int opInsereProduto = scanner.nextInt();
+		ArrayList<Imposto> impostosSelecionados = new ArrayList<>();
 		
 		Produto produto = new Produto();
 
@@ -99,9 +97,18 @@ public class Produto {
 		double margemLucro = scanner.nextDouble();
 		produto.setMargemLucro(margemLucro);
 		
-		System.out.println("Escolha os Impostos para este produto:\n ");
+		System.out.println("Digite o número do impostos para este produto:");
+	    int numImpostos = scanner.nextInt();
+	    do {
+	    	System.out.println("Escolha o Imposto");
+	    	
+	    	impostosSelecionados.add(Menu.menuImpostosInserir(impostos));
+		    	
+	    	numImpostos --;
+	    	
+		} while (numImpostos==-1);
 		
-		
+	    produto.setImpostos(impostosSelecionados);
 		
 		produtos.add(produto);
 

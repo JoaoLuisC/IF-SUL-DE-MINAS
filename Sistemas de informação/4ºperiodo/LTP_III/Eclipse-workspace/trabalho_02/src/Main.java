@@ -25,7 +25,7 @@ public class Main {
 				break;
 				
 				case 2: 
-					Produto.insereProdutos(produtos);	
+					Produto.insereProdutos(produtos,impostos);	
 				break;
 				
 				case 3: 
@@ -33,7 +33,6 @@ public class Main {
 				break;
 				
 				case 4: 
-					
 					
 				break;
 				
