@@ -7,21 +7,20 @@ public class Menu {
 	public static int menuProduto(Produto[] produtos) {
 
 		int op = 0,i = 1;
-		
 		// pq alerta a variavel sc?
-		Scanner scanner = new Scanner(System.in);
-
-		System.out.println("**Menu Produtos**\n");
-		System.out.println("Escolha um produto para obeter seu preço final");
-		
-		for (Produto produto : produtos) {
+		try (Scanner scanner = new Scanner(System.in)) {
+			System.out.println("**Menu Produtos**\n");
+			System.out.println("Escolha um produto para obeter seu preço final");
 			
-            System.out.println(i +"-"+produto.formatarProdutoMenu());
-            i++;
-        }
-		
-		
-		op = scanner.nextInt();
+			for (Produto produto : produtos) {
+				
+			    System.out.println(i +"-"+produto.formatarProdutoMenu());
+			    i++;
+			}
+			
+			
+			op = scanner.nextInt();
+		}
 
 		clearConsole.limpaConsole();
 
@@ -35,17 +34,17 @@ public class Menu {
 
 		int op = 0;
 
-		// pq alerta a variavel sc?
-		Scanner scanner = new Scanner(System.in);
-
-		System.out.println("**Menu Impostos**\n");
-		System.out.println("Escolha a quantidade de impostos a serem aplicados no produto");
-		System.out.println("1 - 1 imposto");
-		System.out.println("2 - 2 impostos");
-		System.out.println("3 - 3 impostos");
-		System.out.println("4 - 4 impostos");
-		
-		op = scanner.nextInt();
+		try (// pq alerta a variavel sc?
+		Scanner scanner = new Scanner(System.in)) {
+			System.out.println("**Menu Impostos**\n");
+			System.out.println("Escolha a quantidade de impostos a serem aplicados no produto");
+			System.out.println("1 - 1 imposto");
+			System.out.println("2 - 2 impostos");
+			System.out.println("3 - 3 impostos");
+			System.out.println("4 - 4 impostos");
+			
+			op = scanner.nextInt();
+		}
 
 		clearConsole.limpaConsole();
 
@@ -62,19 +61,19 @@ public class Menu {
 
 		int op = 0;
 		
-		// pq alerta a variavel sc?
-		Scanner scanner = new Scanner(System.in);
-
-		System.out.println("**Menu Impostos**\n");
-		System.out.println("Escolha os impostos a serem incididos no preço do produto");
-		System.out.println("1 - ICMS: 7%");
-		System.out.println("2 - Confins: 12%");
-		System.out.println("3 - IPI: 8%");
-		System.out.println("4 - ISS: 5%");
-		System.out.println("5 - Cide: 10%");
-		System.out.println("6 - CSLL: 4%");
-		
-		op = scanner.nextInt();
+		try (// pq alerta a variavel sc?
+		Scanner scanner = new Scanner(System.in)) {
+			System.out.println("**Menu Impostos**\n");
+			System.out.println("Escolha os impostos a serem incididos no preço do produto");
+			System.out.println("1 - ICMS: 7%");
+			System.out.println("2 - Confins: 12%");
+			System.out.println("3 - IPI: 8%");
+			System.out.println("4 - ISS: 5%");
+			System.out.println("5 - Cide: 10%");
+			System.out.println("6 - CSLL: 4%");
+			
+			op = scanner.nextInt();
+		}
 
 		clearConsole.limpaConsole();
 
