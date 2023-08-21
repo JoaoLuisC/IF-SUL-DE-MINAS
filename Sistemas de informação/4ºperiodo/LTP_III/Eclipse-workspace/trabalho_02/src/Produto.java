@@ -76,8 +76,6 @@ public class Produto {
 			double margemLucro = scanner.nextDouble();
 			produto.setMargemLucro(margemLucro);
 
-			scanner.nextLine(); // Consumir a quebra de linha após a entrada de inteiros
-
 			produtos[i] = produto;
 
 		}
