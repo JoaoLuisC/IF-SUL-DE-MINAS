@@ -55,7 +55,7 @@ public class Produto {
 	
 	//metodo para inserir os dados dos produtos
 	public static Produto[] insereProdutos(int tamanho) {
-
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 
 		Produto[] produtos = new Produto[tamanho];

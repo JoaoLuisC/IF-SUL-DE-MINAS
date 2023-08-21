@@ -7,21 +7,25 @@ public class Main {
 		int opQuantidadeProduto;
 		
 		
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("Digite o numero de Produtos a serem inseridos: ");
 		opQuantidadeProduto = scanner.nextInt();
+		
+		
 		
 		Produto[] produtos = new Produto[opQuantidadeProduto];
 		
 		produtos = Produto.insereProdutos(opQuantidadeProduto);
         
         
+		@SuppressWarnings("unused")
 		int opProduto = Menu.menuProduto(produtos);
 		
 		//implementar a leitura dos impostos do msm jeito do menu 
 
-
+		
 		
 	}
 	
