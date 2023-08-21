@@ -1,13 +1,27 @@
+import java.util.ArrayList;
 import java.util.Scanner;;
 
 public class Produto {
-	// variaveis: nomeProduto, Preço Custo, margem de lucro
-
+	
 	private double precoCusto;
 	private String nomeProduto;
 	private double margemLucro;
+	private ArrayList<Imposto> imposto;
 
+	//CONSTRUTOR
+	public Produto() {
+		
+	}
 	
+	public Produto(double precoCusto, String nomeProduto, double margemLucro) {
+		super();
+		this.precoCusto = precoCusto;
+		this.nomeProduto = nomeProduto;
+		this.margemLucro = margemLucro;
+	}
+	
+	
+
 	// GETTERS dos Produtos
 	public double getPrecoCusto() {
 		return precoCusto;
@@ -18,9 +32,16 @@ public class Produto {
 	public double getMargemLucro() {
 		return margemLucro;
 	}
-
-	public void setPrecoCusto(double precoCusto2) {
-		this.precoCusto = precoCusto2;
+	public ArrayList<Imposto> getImposto() {
+		return imposto;
+	}
+	
+	//SETTERS de Produtos
+	public void setImposto(ArrayList<Imposto> imposto) {
+		this.imposto = imposto;
+	}
+	public void setPrecoCusto(double precoCusto) {
+		this.precoCusto = precoCusto;
 	}
 	public void setNomeProduto(String nomeProduto) {
 		this.nomeProduto = nomeProduto;
@@ -29,6 +50,8 @@ public class Produto {
 		this.margemLucro = margemLuro;
 	}
 
+	//----------------------------------------------------------------------------------
+	
 	// metodos Para calcular o preço final do produto com base nos impostos e margem
 	// de lucro
 	public double calculaPrecoFinal(double impostosSomados, double margemLucro, double precoCusto) {
@@ -54,31 +77,30 @@ public class Produto {
 	}
 	
 	//metodo para inserir os dados dos produtos
-	public static Produto[] insereProdutos(int tamanho) {
+	public static ArrayList<Produto> insereProdutos(ArrayList<Produto> produtos,int quantidadeImpostos) {
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
-
-		Produto[] produtos = new Produto[tamanho];
 		
-		for (int i = 0; i < produtos.length; i++) {
+		Produto produto = new Produto();
 
-			Produto produto = new Produto();
+		System.out.println("Digite o nome do Produto:\n");
+		String nomeProduto = scanner.nextLine();
+		produto.setNomeProduto(nomeProduto);
 
-			System.out.println("Digite o nome do Produto " + (i + 1) + ":");
-			String nomeProduto = scanner.nextLine();
-			produto.setNomeProduto(nomeProduto);
+		System.out.println("Digite o Preço de Custo do Produto:\n");
+		double precoCusto = scanner.nextDouble();
+		produto.setPrecoCusto(precoCusto);
 
-			System.out.println("Digite o Preço de Custo do Produto " + (i + 1) + ":");
-			double precoCusto = scanner.nextDouble();
-			produto.setPrecoCusto(precoCusto);
+		System.out.println("Digite a Margem de Lucro em porcentagem do Produto:\n ");
+		double margemLucro = scanner.nextDouble();
+		produto.setMargemLucro(margemLucro);
+		
+		System.out.println("Escolha os Impostos para este produto:\n ");
+		
+		
+		
+		produtos.add(produto);
 
-			System.out.println("Digite a Margem de Lucro em porcentagem do Produto " + (i + 1) + ":");
-			double margemLucro = scanner.nextDouble();
-			produto.setMargemLucro(margemLucro);
-
-			produtos[i] = produto;
-
-		}
 		
 		return produtos;
 

@@ -1,51 +1,70 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
 
-	// Retornar os menus de opções para o cliente escolher o Produto a ser calculado
+	
+	
+	public static int menuPrincipal() {
+		
+		int op;
+		
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("**Menu Principal**\n");
+		System.out.println("1- Listar Produtos e Impostos");
+		System.out.println("2- Adicionar Produto");
+		System.out.println("3- Adicionar Imposto");
+		System.out.println("4- Editar Produto");		
+		System.out.println("5- Editar Imposto");
+		System.out.println("6- Comprar Produtos");
+		System.out.println("7- Excluir Produto da lista de compras");
+		System.out.println("8- Finalizar Compra");
+		System.out.println("0- Sair");
+		
+		op = scanner.nextInt();
+		
+		return op;
+	}
+	
+	public static int menuProduto(ArrayList<Produto> produtos) {
+		int op = 0,i = 1;
+		
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("**Menu Produtos**\n");
+		System.out.println("Escolha um produto para adicionar ao carrinho");
+			
+		for (Produto produto : produtos) {	
+		   System.out.println(i +"-"+produto.formatarProdutoMenu());
+		   i++;
+		}
+			
+			
+		op = scanner.nextInt();
 
-	public static int menuProduto(Produto[] produtos) {
+		return op;
+	}
+
+	
+	public static int menuImpostos(ArrayList<Imposto> impostos) {
 
 		int op = 0,i = 1;
-		// pq alerta a variavel sc?
+
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
-			System.out.println("**Menu Produtos**\n");
-			System.out.println("Escolha um produto para obeter seu preço final");
-			
-			for (Produto produto : produtos) {
-				
-			    System.out.println(i +"-"+produto.formatarProdutoMenu());
-			    i++;
+		
+		System.out.println("**Menu Impostos**\n");
+		System.out.println("Escolha os impostos a serem incididos no preço do produto");
+		for (Imposto imposto : impostos) {	
+			   System.out.println(i +"-"+imposto.formatarImposto());
+			   i++;
 			}
-			
-			
-			op = scanner.nextInt();
 		
-
-		clearConsole.limpaConsole();
-
-		return op;
-	}
-
-	// Retornar os menus de opções da quantidade de impostos a serem incididos no produto
-	//para dia 21/08 entender como fazer isso funfar
-
-	public static int menuQuantidadeDeImpostos() {
-
-		int op = 0;
-
-		
-		@SuppressWarnings("resource")
-		Scanner scanner = new Scanner(System.in);
-			System.out.println("**Menu Impostos**\n");
-			System.out.println("Escolha a quantidade de impostos a serem aplicados no produto");
-			System.out.println("1 - 1 imposto");
-			System.out.println("2 - 2 impostos");
-			System.out.println("3 - 3 impostos");
-			System.out.println("4 - 4 impostos");
 			
-			op = scanner.nextInt();
+		op = scanner.nextInt();
 		
 
 		clearConsole.limpaConsole();
@@ -53,35 +72,32 @@ public class Menu {
 		return op;
 	}
 	
+	//Menus de Listagem
 	
-	// Retornar os menus de opções para o cliente escolher os impostos a serem
-	// calculados sobre o Produto
-	
-	//para dia 21/08 implementar nesse menu a att do menu de produtos
-	
-	public static int menuImpostos() {
-
-		int op = 0;
+	public static void menuProdutoListar(ArrayList<Produto> produtos) {
+		int i = 1;
 		
-		
-		@SuppressWarnings("resource")
-		Scanner scanner = new Scanner(System.in);
-			System.out.println("**Menu Impostos**\n");
-			System.out.println("Escolha os impostos a serem incididos no preço do produto");
-			System.out.println("1 - ICMS: 7%");
-			System.out.println("2 - Confins: 12%");
-			System.out.println("3 - IPI: 8%");
-			System.out.println("4 - ISS: 5%");
-			System.out.println("5 - Cide: 10%");
-			System.out.println("6 - CSLL: 4%");
-			
-			op = scanner.nextInt();
-		
-
-		clearConsole.limpaConsole();
-
-		return op;
+		System.out.println("**Produtos**");
+		for (Produto produto : produtos) {	
+		   System.out.println(i +"-"+produto.formatarProdutoMenu());
+		   i++;
+		}
+		System.out.println("\n");
 	}
+
+	public static void menuImpostosListar(ArrayList<Imposto> impostos) {
+
+		int i = 1;
+		
+		System.out.println("**Impostos**");		
+		for (Imposto imposto : impostos) {	
+			   System.out.println(i +"-"+imposto.formatarImposto());
+			   i++;
+			}
+		System.out.println("\n");
+	}
+
+	
 	
 
 	
