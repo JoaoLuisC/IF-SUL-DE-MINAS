@@ -77,9 +77,13 @@ public class Produto {
 	}
 	
 	//metodo para inserir os dados dos produtos
-	public static ArrayList<Produto> insereProdutos(ArrayList<Produto> produtos,int quantidadeImpostos) {
+	public static ArrayList<Produto> insereProdutos(ArrayList<Produto> produtos) {
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
+		//int quantidadeImpostos;
+		
+		//System.out.println("Digite a quantidade de impostos para o produto q sera adicionado: ");
+		//int opInsereProduto = scanner.nextInt();
 		
 		Produto produto = new Produto();
 

@@ -25,13 +25,11 @@ public class Main {
 				break;
 				
 				case 2: 
-					
-					
+					Produto.insereProdutos(produtos);	
 				break;
 				
 				case 3: 
-					
-					
+					Imposto.insereImposto(impostos);					
 				break;
 				
 				case 4: 
