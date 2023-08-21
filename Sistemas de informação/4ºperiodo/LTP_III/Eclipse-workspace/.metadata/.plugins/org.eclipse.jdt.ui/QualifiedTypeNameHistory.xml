@@ -3,4 +3,6 @@
     <fullyQualifiedTypeName name="User"/>
     <fullyQualifiedTypeName name="Student"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="trabalho_02.clearConsole"/>
 </qualifiedTypeNameHistroy>

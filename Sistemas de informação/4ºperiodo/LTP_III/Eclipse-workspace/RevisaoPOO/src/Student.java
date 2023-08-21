@@ -37,8 +37,7 @@ public class Student extends User{
 		//chama o metodo usando super da classe a cima
 		String userData = super.formatPersonalData();
 		
-		String studentData = String.format("\nRA: %s\nCurso: %s\nP:%d",
-										   this.enrolment,this.course,this.semester);
+		String studentData = String.format("\nRA: %s\nCurso: %s\nP:%d", this.enrolment,this.course,this.semester);
 		
 		return userData + studentData;
 	}
