@@ -79,7 +79,11 @@ public class Menu {
 		
 		System.out.println("**Produtos**");
 		for (Produto produto : produtos) {	
-		   System.out.println(i +"-"+produto.formatarProdutoMenu());
+		   //System.out.println(i +"-"+produto.formatarProdutoMenu());
+			
+		   //teste
+		   System.out.println(i +"-"+produto.formatarProduto2());
+		   
 		   i++;
 		}
 		System.out.println("\n");

@@ -7,11 +7,13 @@ public class Main {
 		@SuppressWarnings({ "resource", "unused" })
 		Scanner scanner = new Scanner(System.in);
 	
-		ArrayList<Produto> produtos = new ArrayList<>();
-		produtos = SetupTeste.popularProdutos();
-
 		ArrayList<Imposto> impostos = new ArrayList<>();
 		impostos = SetupTeste.popularImpostos();
+		
+		ArrayList<Produto> produtos = new ArrayList<>();
+		produtos = SetupTeste.popularProdutos(impostos);
+
+		
 		
 		int op = Menu.menuPrincipal();
 		

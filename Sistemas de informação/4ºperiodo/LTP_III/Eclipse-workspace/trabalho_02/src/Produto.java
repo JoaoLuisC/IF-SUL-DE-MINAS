@@ -71,6 +71,22 @@ public class Produto {
 														,nomeProduto, precoCusto,margemLucro);
 	}
 	
+	// Arreguei pro GPT se n eu ia fica loco
+	public String formatarProduto2() {
+	    StringBuilder impostosFormatados = new StringBuilder();
+	    if (impostos != null && !impostos.isEmpty()) {
+	        impostosFormatados.append("   Impostos: ");
+	        for (Imposto imposto : impostos) {
+	            impostosFormatados.append(imposto.getNomeImposto()).append(", ");
+	        }
+	        // Remover a vírgula e o espaço extras no final
+	        impostosFormatados.setLength(impostosFormatados.length() - 2);
+	    }
+
+	    return String.format("Produto: %s | Preço Custo: R$%.2f | Margem Lucro: %.0f%%\n%s",
+	                         nomeProduto, precoCusto, margemLucro, impostosFormatados.toString());
+	}
+	
 	// metodo de StringFormat para devolver strings formatadas para o menu_
 	public String formatarProdutoMenu() {
 		return String.format(nomeProduto);
@@ -106,7 +122,7 @@ public class Produto {
 		    	
 	    	numImpostos --;
 	    	
-		} while (numImpostos==-1);
+		} while (numImpostos!=0);
 		
 	    produto.setImpostos(impostosSelecionados);
 		
