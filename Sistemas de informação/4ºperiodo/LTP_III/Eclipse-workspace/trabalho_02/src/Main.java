@@ -13,7 +13,7 @@ public class Main {
 		ArrayList<Produto> produtos = new ArrayList<>();
 		produtos = SetupTeste.popularProdutos(impostos);
 
-		
+		ArrayList<Produto> produtosCompra = new ArrayList<>();
 		
 		int op = Menu.menuPrincipal();
 		
@@ -39,17 +39,15 @@ public class Main {
 				break;
 				
 				case 5: 
-					
-					
+					Menu.menuAtualizaImposto(impostos);
 				break;
 				
 				case 6: 
-					
-					
+					produtosCompra =  Menu.menuVendas(produtos, produtosCompra);				
 				break;
 				
 				case 7: 
-					
+					Menu.menuCompraListar(produtosCompra);
 					
 				break;
 				

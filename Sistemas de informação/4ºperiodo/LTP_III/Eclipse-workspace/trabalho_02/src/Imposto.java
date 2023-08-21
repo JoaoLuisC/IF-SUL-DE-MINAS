@@ -64,4 +64,19 @@ public class Imposto {
 
 		return impostos;
 	}
+	
+	public static Imposto atualizaImposto(Imposto impostoAtualizado){
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Digite o nome do Imposto:\n");
+		String nomeImposto = scanner.nextLine();
+		impostoAtualizado.setNomeImposto(nomeImposto);
+
+		System.out.println("Digite a taxa do Imposto:\n");
+		double taxaImposto = scanner.nextDouble();
+		impostoAtualizado.setTaxaImposto(taxaImposto);
+		
+		return impostoAtualizado;
+	}
 }

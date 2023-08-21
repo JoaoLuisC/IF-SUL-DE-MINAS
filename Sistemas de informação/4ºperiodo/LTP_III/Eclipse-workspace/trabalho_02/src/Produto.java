@@ -73,7 +73,7 @@ public class Produto {
 	    if (impostos != null && !impostos.isEmpty()) {
 	        impostosFormatados.append("   Impostos: ");
 	        for (Imposto imposto : impostos) {
-	            impostosFormatados.append(imposto.getNomeImposto()).append(", ");
+	            impostosFormatados.append(imposto.getNomeImposto()).append(" (").append(imposto.getTaxaImposto()).append("%), ");
 	        }
 	        // Remover a vírgula e o espaço extras no final
 	        impostosFormatados.setLength(impostosFormatados.length() - 2);
@@ -82,6 +82,7 @@ public class Produto {
 	    return String.format("Produto: %s | Preço Custo: R$%.2f | Margem Lucro: %.0f%%\n%s",
 	                         nomeProduto, precoCusto, margemLucro, impostosFormatados.toString());
 	}
+
 	
 	// metodo de StringFormat para devolver strings formatadas para o menu_
 	public String formatarProdutoMenu() {
