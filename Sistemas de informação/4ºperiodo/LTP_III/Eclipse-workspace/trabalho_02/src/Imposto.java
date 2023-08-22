@@ -10,7 +10,6 @@ public class Imposto {
 	public Imposto() {
 
     }
-	
 	public Imposto(String nomeImposto, double taxaImposto) {
 		super();
         this.nomeImposto = nomeImposto;
@@ -34,18 +33,25 @@ public class Imposto {
 	}
 
 
-	public double SomaImpostos(double imposto) {
+	public static double SomaImpostos(Produto produto) {
 
-		double somaImpostos = imposto;
-
+		double somaImpostos = 0.0;
+		
+		ArrayList<Imposto> impostosDoProduto = produto.getImpostos();
+		for (Imposto imposto : impostosDoProduto) {
+			somaImpostos += imposto.getTaxaImposto();
+		}
+		
 		return somaImpostos;
 	}
-
+	
+	//StringFormat do imposto
 	public String formatarImposto() {
 		return String.format(" %s %.0f%%"
 							,nomeImposto,taxaImposto);
 	}
-
+	
+	//Insere Imposto
 	public static ArrayList<Imposto> insereImposto(ArrayList<Imposto> impostos){
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
@@ -64,7 +70,8 @@ public class Imposto {
 
 		return impostos;
 	}
-	
+
+	//Atualiza Imposto
 	public static Imposto atualizaImposto(Imposto impostoAtualizado){
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);

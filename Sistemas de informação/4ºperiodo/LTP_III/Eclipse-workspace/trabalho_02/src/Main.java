@@ -43,19 +43,21 @@ public class Main {
 				break;
 				
 				case 6: 
-					produtosCompra =  Menu.menuVendas(produtos, produtosCompra);				
+					produtosCompra =  Menu.menuSeleciona(produtos,produtosCompra);
 				break;
 				
 				case 7: 
-					Menu.menuCompraListar(produtosCompra);
-					
+					Menu.menuCompraListar(produtosCompra);	
 				break;
 				
 				case 8: 
 					produtosCompra = Menu.menuExcluirVendas(produtosCompra);
-					
 				break;
 				
+				case 9: 
+					Menu.menuConcluirVenda(produtosCompra);
+					System.exit(0);
+				break;
 				
 				case 0: 
 					System.exit(0);

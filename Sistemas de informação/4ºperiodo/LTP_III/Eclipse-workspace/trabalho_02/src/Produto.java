@@ -6,6 +6,7 @@ public class Produto {
 	private double precoCusto;
 	private String nomeProduto;
 	private double margemLucro;
+	private double precoVenda;
 	private ArrayList<Imposto> impostos;
 
 	//CONSTRUTOR
@@ -20,9 +21,11 @@ public class Produto {
 		this.margemLucro = margemLucro;
 	}
 	
-	
-
 	// GETTERS dos Produtos
+
+	public double getPrecoVenda() {
+		return precoVenda;
+	}
 	public double getPrecoCusto() {
 		return precoCusto;
 	}
@@ -37,6 +40,9 @@ public class Produto {
 	}
 	
 	//SETTERS de Produtos
+	public void setPrecoVenda(double precoVenda) {
+		this.precoVenda = precoVenda;
+	}
 	public void setImpostos(ArrayList<Imposto> impostos) {
 		this.impostos = impostos;
 	}
@@ -54,14 +60,14 @@ public class Produto {
 	
 	// metodos Para calcular o preço final do produto com base nos impostos e margem
 	// de lucro
-	public double calculaPrecoFinal(double impostosSomados, double margemLucro, double precoCusto) {
+	public double calculaPrecoFinal( double margemLucro, double precoCusto, Produto produto) {
 
-		double precoFinal;
-
-		double preçoCustoFinal = precoCusto + (precoCusto * impostosSomados);
-
-		precoFinal = preçoCustoFinal * margemLucro;
-
+		 double impostosSomados = Imposto.SomaImpostos(produto);
+		 double precoCustoFinal = precoCusto + (impostosSomados * precoCusto / 100);
+		 double precoFinal = precoCustoFinal + (precoCustoFinal * margemLucro / 100);
+		
+		
+		
 		return precoFinal;
 	}
 
@@ -83,7 +89,21 @@ public class Produto {
 	                         nomeProduto, precoCusto, margemLucro, impostosFormatados.toString());
 	}
 
-	
+	//metodo de StringFormat para devolver strings formatadas na ultima listagem
+	public String formatarProdutoUltimaListagem() {
+	    StringBuilder impostosFormatados = new StringBuilder();
+	    if (impostos != null && !impostos.isEmpty()) {
+	        impostosFormatados.append("   Impostos: ");
+	        for (Imposto imposto : impostos) {
+	            impostosFormatados.append(imposto.getNomeImposto()).append(", ");
+	        }
+	        // Remover a vírgula e o espaço extras no final
+	        impostosFormatados.setLength(impostosFormatados.length() - 2);
+	    }
+
+	    return String.format("Produto: %s | %s |\n Preço de Venda: R$%.0f",
+	                         nomeProduto, impostosFormatados.toString(),precoVenda);
+	}
 	// metodo de StringFormat para devolver strings formatadas para o menu_
 	public String formatarProdutoMenu() {
 		return String.format(nomeProduto);

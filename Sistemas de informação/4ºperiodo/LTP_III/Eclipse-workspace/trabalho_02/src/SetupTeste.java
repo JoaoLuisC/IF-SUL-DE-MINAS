@@ -27,7 +27,7 @@ public class SetupTeste {
 		
         ArrayList<Produto> produtos = new ArrayList<>();
 
-        Produto arroz = new Produto(7.00, "Arroz", 20);
+        Produto arroz = new Produto(100, "Arroz", 30);
         Produto feijao = new Produto(7.00, "Feijão", 25);
         Produto carne = new Produto(7.00, "Carne", 35);
         Produto cerveja = new Produto(7.00, "Cerveja", 30);
@@ -35,7 +35,7 @@ public class SetupTeste {
         Produto gasolina = new Produto(7.00, "Gasolina", 15);
         
         
-        arroz.setImpostos(new ArrayList<>(Arrays.asList(impostos.get(0), impostos.get(1), impostos.get(2)))); // Confins, ICMS e ISS
+        arroz.setImpostos(new ArrayList<>(Arrays.asList(/*impostos.get(0),*/ impostos.get(1), impostos.get(2)))); // Confins, ICMS e ISS
         feijao.setImpostos(new ArrayList<>(Arrays.asList(impostos.get(0), impostos.get(1), impostos.get(2)))); // Confins, ICMS e ISS
         carne.setImpostos(new ArrayList<>(Arrays.asList(impostos.get(0), impostos.get(1), impostos.get(3)))); // Confins, ICMS e IPI
         cerveja.setImpostos(new ArrayList<>(Arrays.asList(impostos.get(0), impostos.get(1), impostos.get(2), impostos.get(3)))); // Confins, ICMS, ISS e IPI

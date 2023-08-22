@@ -16,10 +16,10 @@ public class Menu {
 		System.out.println("3- Adicionar Imposto");
 		System.out.println("4- Editar Produto");		
 		System.out.println("5- Editar Imposto");
-		System.out.println("6- Comprar Produtos");
-		System.out.println("7- Listar Carrinho de Compras");
-		System.out.println("8- Excluir Produto da lista de compras");
-		System.out.println("9- Finalizar Compra");
+		System.out.println("6- Escolher Produtos para Comprar");
+		System.out.println("7- Listar de Compras");
+		System.out.println("8- Excluir Produto da lista de Compras");
+		System.out.println("9- Finalizar e ver os preços de venda");
 		System.out.println("0- Sair");
 		
 		op = scanner.nextInt();
@@ -137,6 +137,7 @@ public class Menu {
 		
 		return impostos;
 	}
+	
 	public static int menuAtualizaImpostoAux(ArrayList<Imposto> impostos) {
 		
 		@SuppressWarnings("resource")
@@ -157,9 +158,9 @@ public class Menu {
 		return op;
 	}
 
-	//Menu Venda de Produtos
+	//Menu Seleciona Produtos para vender
 	
-	public static ArrayList<Produto> menuVendas(ArrayList<Produto> produtos, ArrayList<Produto> produtodoVenda){
+	public static ArrayList<Produto> menuSeleciona(ArrayList<Produto> produtos, ArrayList<Produto> produtodoVenda){
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);		
 		
@@ -167,7 +168,7 @@ public class Menu {
 		
 		do {
 			
-			Produto produtoAuxiliar = menuVendaProdutoAux(produtos);
+			Produto produtoAuxiliar = menuSelecionaProdutoAux(produtos);
 			
 			produtodoVenda.add( produtoAuxiliar);
 			
@@ -179,13 +180,13 @@ public class Menu {
 		return produtodoVenda;
 	}
 	
-	public static Produto menuVendaProdutoAux(ArrayList<Produto> produtos) {
+	public static Produto menuSelecionaProdutoAux(ArrayList<Produto> produtos) {
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		
 		int i = 1,op = 0;
 		
-		System.out.println("Escolha um produto para Comprar: ");
+		System.out.println("Escolha um produto para inserir no carrinho: ");
 		
 		for (Produto produto : produtos) {	
 			   System.out.println(i +"-"+produto.formatarProduto());
@@ -226,7 +227,7 @@ public class Menu {
 		
 		int i = 1,op = 0;
 		
-		System.out.println("Escolha um produto para Excluir do Carrinho: ");
+		System.out.println("Escolha um produto para Excluir da lista de Compras: ");
 		
 		for (Produto produto : produtos) {	
 			   System.out.println(i +"-"+produto.formatarProduto());
@@ -238,6 +239,30 @@ public class Menu {
 		
 		
 		return produtos.get(op);
+	}
+	
+	//Menu Concluir 
+	public static void menuConcluirVenda(ArrayList<Produto> produtodoVenda){
+		
+		
+		System.out.println("Venda Concluída!\n");
+
+	    for (Produto produto : produtodoVenda) {
+	        double precoFinal = produto.calculaPrecoFinal(produto.getMargemLucro(), produto.getPrecoCusto(), produto);
+	        produto.setPrecoVenda(precoFinal);
+	        System.out.println(produto.formatarProdutoUltimaListagem());
+	        System.out.println("-------------------------");
+	    }
+
+	    double totalVenda = 0.0;
+	    for (Produto produto : produtodoVenda) {
+	        totalVenda += produto.getPrecoVenda();
+	    }
+
+	    System.out.println("Total da Venda: R$" + totalVenda);
+		
+		
+		
 	}
 	
 }
