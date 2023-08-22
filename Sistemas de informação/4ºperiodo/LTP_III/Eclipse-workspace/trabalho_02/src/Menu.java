@@ -263,7 +263,7 @@ public class Menu {
 		System.out.println("Venda Concluída!\n");
 
 	    for (Produto produto : produtodoVenda) {
-	        double precoFinal = produto.calculaPrecoFinal(produto.getMargemLucro(), produto.getPrecoCusto(), produto);
+	        double precoFinal = produto.calculaPrecoFinal();
 	        produto.setPrecoVenda(precoFinal);
 	        System.out.println(produto.formatarProdutoUltimaListagem());
 	        System.out.println("-------------------------");
