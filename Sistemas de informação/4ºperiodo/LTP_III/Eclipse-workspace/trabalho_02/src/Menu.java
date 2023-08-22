@@ -60,7 +60,7 @@ public class Menu {
 
 		int i = 1;
 		
-		System.out.println("**Produtos**");
+		System.out.println("**Produtos no Carrinho de Compra**");
 		for (Produto produto : produtosEmCompra) {	
 		   //System.out.println(i +"-"+produto.formatarProdutoMenu());
 			
@@ -171,7 +171,7 @@ public class Menu {
 			
 			produtodoVenda.add( produtoAuxiliar);
 			
-			System.out.println("Deseja Parar? digite 0");
+			System.out.println("Parar - 0 | Continuar - 1");
 			op = scanner.nextInt();	
 			
 		} while (op != 0);
@@ -198,6 +198,46 @@ public class Menu {
 		
 		return produtos.get(op);
 	}
+	
 	//Menu Exclusao de Produtos
-
+	
+	public static ArrayList<Produto> menuExcluirVendas(ArrayList<Produto> produtodoVenda){
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);		
+		
+		int op =1;
+		
+		do {
+			
+			Produto produtoAuxiliar = menuExcluirVendaProdutoAux(produtodoVenda);
+			
+			produtodoVenda.remove(produtoAuxiliar);
+			
+			System.out.println("Parar - 0 | Continuar - 1");
+			op = scanner.nextInt();	
+			
+		} while (op != 0);
+		
+		return produtodoVenda;
+	}
+	public static Produto menuExcluirVendaProdutoAux(ArrayList<Produto> produtos) {
+		@SuppressWarnings("resource")
+		Scanner scanner = new Scanner(System.in);
+		
+		int i = 1,op = 0;
+		
+		System.out.println("Escolha um produto para Excluir do Carrinho: ");
+		
+		for (Produto produto : produtos) {	
+			   System.out.println(i +"-"+produto.formatarProduto());
+			   i++;
+			}
+		op = scanner.nextInt();
+		
+		op--;
+		
+		
+		return produtos.get(op);
+	}
+	
 }

@@ -52,7 +52,7 @@ public class Main {
 				break;
 				
 				case 8: 
-					
+					produtosCompra = Menu.menuExcluirVendas(produtosCompra);
 					
 				break;
 				
