@@ -2,7 +2,22 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
-
+	
+	public final static void clearConsole() {
+		try {
+			final String os = System.getProperty("os.name");
+			System.out.println(os);
+			if (os.contains("Windows")) {
+				Runtime.getRuntime().exec("cls");
+			} else {
+				Runtime.getRuntime().exec("clear");
+			}
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 	public static int menuPrincipal() {
 		
 		int op;
@@ -31,7 +46,7 @@ public class Menu {
 	
 	public static void menuProdutoListar(ArrayList<Produto> produtos) {
 		int i = 1;
-		
+		//clearConsole();
 		System.out.println("**Produtos**");
 		for (Produto produto : produtos) {	
 		   //System.out.println(i +"-"+produto.formatarProdutoMenu());

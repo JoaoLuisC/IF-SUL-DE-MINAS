@@ -71,8 +71,6 @@ public class Produto {
 		return precoFinal;
 	}
 
-	
-	
 	// metodo de StringFormat para devolver strings formatadas(usei o gpt nesse metodo)
 	public String formatarProduto() {
 	    StringBuilder impostosFormatados = new StringBuilder();
@@ -184,8 +182,5 @@ public class Produto {
 		return produtoATT;
 
 	}
-
-
-
 
 }
