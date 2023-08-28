@@ -60,19 +60,15 @@ public class Produto {
 	
 	// metodos Para calcular o preço final do produto com base nos impostos e margem
 	// de lucro
-	public double calculaPrecoFinal( double margemLucro, double precoCusto, Produto produto) {
+	public double calculaPrecoFinal() {
 
-		 double impostosSomados = Imposto.SomaImpostos(produto);
+		 double impostosSomados = Imposto.SomaImpostos(this);
 		 double precoCustoFinal = precoCusto + (impostosSomados * precoCusto / 100);
 		 double precoFinal = precoCustoFinal + (precoCustoFinal * margemLucro / 100);
-		
-		
 		
 		return precoFinal;
 	}
 
-	
-	
 	// metodo de StringFormat para devolver strings formatadas(usei o gpt nesse metodo)
 	public String formatarProduto() {
 	    StringBuilder impostosFormatados = new StringBuilder();
@@ -184,8 +180,5 @@ public class Produto {
 		return produtoATT;
 
 	}
-
-
-
 
 }
