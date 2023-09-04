@@ -13,6 +13,8 @@ public class main {
 		System.out.println(IPI == IPI2);
 		
 		
+		
+		
 	}
 
 }

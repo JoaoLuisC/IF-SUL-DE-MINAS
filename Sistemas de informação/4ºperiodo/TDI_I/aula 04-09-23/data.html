@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul data-cpf="0880890">
+        <li>Nome: teste</li>
+        <li>Email: testeEmail</li>
+        <li>Telefone: testeTel</li>
+    </ul>
+
+    <ul data-cpf="0880890">
+        <li>Nome: teste2</li>
+        <li>Email: testeEmail2</li>
+        <li>Telefone: testeTel2</li>
+    </ul>
+
+
+    <script>
+
+       const ull = document.querySelectorAll('ul').forEach((ul)=>{
+        console.log(ul.dataset);
+       });
+
+    </script>
+
+</body>
+</html>

@@ -13,7 +13,20 @@ public class Tax {
 		this.name = name;
 		setAliquot(aliquot);
 	}
-
+	
+	@Override
+	public boolean equals(Object obj){
+		
+		if(obj == null)
+			return false;
+		if(!(obj instanceof Tax))
+			return false;
+		
+		//Cast (Tax)obj
+		Tax tax = (Tax)obj;
+		
+		return this.abbr.equals(tax.abbr);
+	}
 	
 	private void setAliquot(double aliquot) {
 		//TODO Implementar calculo do imposto
