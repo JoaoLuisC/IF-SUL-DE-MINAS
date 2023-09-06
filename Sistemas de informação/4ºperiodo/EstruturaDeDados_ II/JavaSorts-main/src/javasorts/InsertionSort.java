@@ -43,13 +43,13 @@ public class InsertionSort {
             System.out.println("v[" + comp + "]=" + array[comp]);
             array[comp + 1] = array[comp];//deslocando
             comp--;
-            JavaSorts.printArray(array);// mostra vetor
+            Main.printArray(array);// mostra vetor
             scanner.nextLine();// pausa
         }// fim while
         // inserindo o eleito na posicao correta 
         System.out.println("Inserindo eleito indice:" + (comp + 1));
         array[comp + 1] = eleito;
-        JavaSorts.printArray(array);// mostra vetor
+        Main.printArray(array);// mostra vetor
         scanner.nextLine();// pausa
     }// fim insert
     //-------------------------

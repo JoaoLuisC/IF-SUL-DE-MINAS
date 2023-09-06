@@ -22,7 +22,7 @@ public class Menus {
         
         Scanner scanner = new Scanner(System.in);
         
-        System.out.println("\nComparar dados?");
+        System.out.println("\nComentar algoritimos?");
         System.out.println("1[sim] | 2[não]");
         op = scanner.nextInt();
 
@@ -55,7 +55,7 @@ public class Menus {
 
         int op;
         
-        System.out.println("\nMenu Metodos de Ordenação");
+        System.out.println("\nMenu Metodos de Ordenação comentados");
         System.out.println("1- BubbleSort - comentado");
         System.out.println("2- SelectionSort - comentado");
         System.out.println("3- InsertionSort - comentado");

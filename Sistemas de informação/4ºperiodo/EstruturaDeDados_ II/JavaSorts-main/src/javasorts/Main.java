@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class JavaSorts {
+public class Main {
 
     public static void printArray(int array[]) {
         
@@ -34,7 +34,7 @@ public class JavaSorts {
 
             case 1:
                 for (int i = 0; i < vetorPrincipal.length; i++) {
-                    vetorPrincipal[i] = rand.nextInt(1000);
+                    vetorPrincipal[i] = rand.nextInt(50);
                 }
                 break;
 
@@ -48,6 +48,7 @@ public class JavaSorts {
         }
         
         int[] vetorParaComparacao  = Arrays.copyOf(vetorPrincipal, vetorPrincipal.length);
+        int[] vetorParaComparacao2  = Arrays.copyOf(vetorPrincipal, vetorPrincipal.length);
         
         
         op2 = Menus.menuComentado();
@@ -142,6 +143,34 @@ public class JavaSorts {
                 //comparar tempos
                 case 9:
 
+                    long tempoInicialMergeSortCompara = System.nanoTime(); 
+                    MergeSort.mergeSort(vetorPrincipal, vetorAux, 0, vetorPrincipal.length-1);
+                    long tempoFinalMergeSortCompara = System.nanoTime();
+                    long tempoExecucaoNanosMergeSortCompara = tempoFinalMergeSortCompara - tempoInicialMergeSortCompara;
+                    double tempoExecucaoSegundosMergeSortCompara = tempoExecucaoNanosMergeSortCompara / 1e9; // Convertendo para segundos
+
+                    
+                    long tempoInicialSelectSortCompara = System.nanoTime();              
+                    SelectionSort.sSort(vetorParaComparacao);long tempoFinalSelectSortCompara = System.nanoTime();
+                    long tempoExecucaoNanosSelectSortCompara = tempoFinalSelectSortCompara - tempoInicialSelectSortCompara;
+                    double tempoExecucaoSegundosSelectSortCompara = tempoExecucaoNanosSelectSortCompara / 1e9; // Convertendo para segundos
+
+                    
+                    long tempoInicialBsortComentado = System.nanoTime(); 
+                    BubbleSort.bSort(vetorParaComparacao2);
+                    long tempoFinalBsortComentado = System.nanoTime();
+                    long tempoExecucaoNanosBsortComentado = tempoFinalBsortComentado - tempoInicialBsortComentado;
+                    double tempoExecucaoSegundosBsortComentado= tempoExecucaoNanosBsortComentado / 1e9; // Convertendo para segundos
+
+                   
+                    
+                    
+                    System.out.println("\nTempo de execução: " + tempoExecucaoSegundosBsortComentado + " segundos - bubble sort\n");
+                    System.out.println("\nTempo de execução: " + tempoExecucaoSegundosSelectSortCompara + " segundos - Selection Sort\n");            
+                    System.out.println("\nTempo de execução: " + tempoExecucaoSegundosMergeSortCompara + " segundos - Merge Sort\n"); 
+                    
+                    
+                    
 
                 break;
 
@@ -154,57 +183,31 @@ public class JavaSorts {
 
                 //BubbleSort
                 case 1:
-                         
-
-                    BubbleSort.bSortComentado(vetor);
-
-                    System.out.println("\nTempo de execução: " + tempoExecucaoSegundosBsort + " segundos\n");
-                    //System.out.println("Comparações: "+BubbleSort.comparacao+" trocas:"+BubbleSort.troca);
+ 
+                    BubbleSort.bSortComentado(vetorPrincipal);
 
                 break;
 
                 //SelectionSort
                 case 2:
-                    long tempoInicialSelectSort = System.nanoTime();               
-
-     //             SelectionSort.sSortComentado(vetor);                
-                    SelectionSort.sSort(vetorPrincipal);
-
-
-                    long tempoFinalSelectSort = System.nanoTime();
-                    long tempoExecucaoNanosSelectSort = tempoFinalSelectSort - tempoInicialSelectSort;
-                    double tempoExecucaoSegundosSelectSort = tempoExecucaoNanosSelectSort / 1e9; // Convertendo para segundos
-
-                    System.out.println("\nTempo de execução: " + tempoExecucaoSegundosSelectSort + " segundos\n");
-                  //System.out.println("Comparações: "+SelectionSort.comparacao+" troca: "+SelectionSort.troca);
+                    
+                       SelectionSort.sSortComentado(vetorPrincipal);
+                       
                 break;
 
                 //InsertionSort
                 case 3: 
-                    long tempoInicialInsertSort = System.nanoTime();
+                    
+//                    InsertionSortComentado.iSort(vetorPrincipal);               
 
-                    InsertionSort.iSort(vetorPrincipal);               
-
-                    long tempoFinalInsertSort = System.nanoTime();
-                    long tempoExecucaoNanosInsertSort = tempoFinalInsertSort - tempoInicialInsertSort;
-                    double tempoExecucaoSegundosInsertSort = tempoExecucaoNanosInsertSort / 1e9; // Convertendo para segundos
-
-                    System.out.println("\nTempo de execução: " + tempoExecucaoSegundosInsertSort + " segundos\n");
-                  //System.out.println("Comparações: "+InsertionSort.comparacao+"deslocamento:"+InsertionSort.deslocamento);
                 break;
 
                 //MergeSort
                 case 4:
-                    long tempoInicialMergeSort = System.nanoTime();   
+                    System.out.println("Vetor:");
+                    printArray(vetorPrincipal);
+                    MergeSort.mergeSortComentado(vetorPrincipal, vetorAux, 0, vetorPrincipal.length-1);
 
-                    MergeSort.mergeSort(vetorPrincipal, vetorAux, 0, vetorPrincipal.length-1);
-
-                    long tempoFinalMergeSort = System.nanoTime();
-                    long tempoExecucaoNanosMergeSort = tempoFinalMergeSort - tempoInicialMergeSort;
-                    double tempoExecucaoSegundosMergeSort = tempoExecucaoNanosMergeSort / 1e9; // Convertendo para segundos
-
-                    System.out.println("\nTempo de execução: " + tempoExecucaoSegundosMergeSort + " segundos\n");
-                  //System.out.println("Comparações: trocas:");
                 break;
 
                 //QuickSort
@@ -229,22 +232,11 @@ public class JavaSorts {
 
 
                 break;
-                //comparar tempos
-                case 9:
-
-
-                break;
-
+               
             }
         }
         
         
-        
-        //System.out.println("\nVetor original:");
-        //printArray(vetorOriginal);
-        //System.out.println("Vetor ordenado");
-        //printArray(vetor);
-        //clearConsole();
     }
 
 }

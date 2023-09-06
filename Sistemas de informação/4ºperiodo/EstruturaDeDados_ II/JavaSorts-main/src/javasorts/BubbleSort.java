@@ -25,7 +25,7 @@ public class BubbleSort {
         Scanner scanner = new Scanner(System.in);
         for(int fase=1;fase<array.length;fase++){
             System.out.println("Fase "+fase);//
-            JavaSorts.printArray(array);//
+            Main.printArray(array);//
             scanner.nextLine();// pause
         for(int comp=0;comp<array.length-fase;comp++){
             System.out.println("Comparando "+array[comp]+ " com " + array[comp+1]);//

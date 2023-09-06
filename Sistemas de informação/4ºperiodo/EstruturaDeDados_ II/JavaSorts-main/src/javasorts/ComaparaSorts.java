@@ -2,7 +2,7 @@ package javasorts;
 
 public class ComaparaSorts {
     
-    public static void ConfrontoSorts(){
+    public static void ConmparaSorts(){
         
         
         
