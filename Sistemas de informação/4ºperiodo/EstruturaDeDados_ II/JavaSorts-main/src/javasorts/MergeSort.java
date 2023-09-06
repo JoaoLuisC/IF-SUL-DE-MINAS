@@ -91,22 +91,29 @@ public class MergeSort {
             //percorre todo o vetor
             System.out.println("Ordenando");
             for (int i = inicio; i <= fim; i++){ 
+                
+                int k = 1;
+                
                 if(esq > meio){
-                    System.out.println("o vetor "+auxiliar[esq]+" é MAIOR que o vetor do meio "+vetor[meio]);
+                    System.out.println("comparação "+k+":  O vetor "+auxiliar[esq]+" é MAIOR que o vetor "+vetor[meio]);
                     vetor[i] = auxiliar[dir++];
                     printArray(auxiliar);
+                    k++;
                 }else if (dir > fim){
-                    System.out.println("o vetor "+auxiliar[dir]+" é MAIOR que o vetor do fim"+auxiliar[esq]);
+                    System.out.println("comparação "+k+":  O vetor "+auxiliar[dir]+" é MAIOR que o vetor "+auxiliar[esq]);
                     vetor[i] = auxiliar[esq++];
                     printArray(auxiliar);
+                    k++;
                 }else if (auxiliar[esq]<auxiliar[dir]){//se o numero da esquerda for menor q o numero da direitra
-                    System.out.println("o vetor na posição esqueda "+auxiliar[esq]+" é MENOR que o vetor na posição "+auxiliar[dir]);
+                    System.out.println("comparação "+k+":  O vetor na posição esqueda "+auxiliar[esq]+" é MENOR que o vetor "+auxiliar[dir]);
                     vetor[i] = auxiliar[esq++];
                     printArray(auxiliar);
+                    k++;
                 }else{//se o numero da esquerda for maior q o numero da direitra
-                    System.out.println("o vetor na posição esqueda "+auxiliar[esq]+" é MAIOR que o vetor na posição "+auxiliar[dir]);
+                    System.out.println("comparação "+k+":  O vetor na posição esqueda "+auxiliar[esq]+" é MAIOR que o vetor "+auxiliar[dir]);
                     vetor[i] = auxiliar[dir++];
                     printArray(auxiliar);
+                    k++;
                 }
             }
             System.out.println("---------------------------------");
