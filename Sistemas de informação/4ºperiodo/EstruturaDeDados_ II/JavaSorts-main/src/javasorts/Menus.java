@@ -2,6 +2,7 @@ package javasorts;
 
 import java.util.Scanner;
 
+//4,2,3,6,10,9,7,5,11,1
 
 public class Menus {
     
