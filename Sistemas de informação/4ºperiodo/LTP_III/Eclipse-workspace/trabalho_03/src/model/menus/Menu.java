@@ -1,29 +1,20 @@
-package model;
+package model.menus;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import model.imposto.Imposto;
+import model.products.Products;
+import model.products.calculations.ProductsCalcs;
+import model.products.util.ProductsUtil;
+import model.taxes.Taxes;
+import model.taxes.util.TaxesUtil;
 
 public class Menu {
-	
-	public final static void clearConsole() {
-		try {
-			final String os = System.getProperty("os.name");
-			System.out.println(os);
-			if (os.contains("Windows")) {
-				Runtime.getRuntime().exec("cls");
-			} else {
-				Runtime.getRuntime().exec("clear");
-			}
-		} catch (final Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
 	
 	public static int menuPrincipal() {
 		
 		int op;
+		
+		
 		
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
@@ -47,11 +38,11 @@ public class Menu {
 	
 	//Menus de Listagem
 	
-	public static void menuProdutoListar(ArrayList<Produto> produtos) {
+	public static void menuProdutoListar(ArrayList<Products> produtos) {
 		int i = 1;
 		//clearConsole();
 		System.out.println("**Produtos**");
-		for (Produto produto : produtos) {	
+		for (Products produto : produtos) {	
 		   //System.out.println(i +"-"+produto.formatarProdutoMenu());
 			
 		   //teste
@@ -62,24 +53,24 @@ public class Menu {
 		System.out.println("\n");
 	}
 
-	public static void menuImpostosListar(ArrayList<Imposto> impostos) {
+	public static void menuImpostosListar(ArrayList<Taxes> impostos) {
 
 		int i = 1;
 		
 		System.out.println("**Impostos**");		
-		for (Imposto imposto : impostos) {	
+		for (Taxes imposto : impostos) {	
 			   System.out.println(i +"-"+imposto.formatarImposto());
 			   i++;
 			}
 		System.out.println("\n");
 	}
 
-	public static void menuCompraListar(ArrayList<Produto> produtosEmCompra) {
+	public static void menuCompraListar(ArrayList<Products> produtosEmCompra) {
 
 		int i = 1;
 		
 		System.out.println("**Produtos no Carrinho de Compra**");
-		for (Produto produto : produtosEmCompra) {	
+		for (Products produto : produtosEmCompra) {	
 		   //System.out.println(i +"-"+produto.formatarProdutoMenu());
 			
 		   //teste
@@ -93,13 +84,13 @@ public class Menu {
 	
 	//Menu Insere Imposto no Produto
 	
-	public static Imposto menuImpostosInserirProduto(ArrayList<Imposto> impostos) {
+	public static Taxes menuImpostosInserirProduto(ArrayList<Taxes> impostos) {
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		
 		int i = 1,op = 0;
 				
-		for (Imposto imposto : impostos) {	
+		for (Taxes imposto : impostos) {	
 			   System.out.println(i +"-"+imposto.formatarImposto());
 			   i++;
 			}
@@ -112,18 +103,18 @@ public class Menu {
 	
 	//Menu atualiza Produto
 	
-	public static ArrayList<Produto> menuAtualizaProduto(ArrayList<Produto> produtos,ArrayList<Imposto> impostos) {
+	public static ArrayList<Products> menuAtualizaProduto(ArrayList<Products> produtos,ArrayList<Taxes> impostos) throws Exception {
 		
 		int produtoIndex = menuAttProdutoAux(produtos);
 		
-		Produto produtoAtualizado = produtos.get(produtoIndex);
+		Products produtoAtualizado = produtos.get(produtoIndex);
 		
-		produtos.set(produtoIndex, Produto.atualizaProdutos(produtoAtualizado, impostos));
+		produtos.set(produtoIndex, ProductsUtil.atualizaProdutos(produtoAtualizado, impostos));
 		
 		return produtos;
 	}
 	
-	public static int menuAttProdutoAux(ArrayList<Produto> produtos) {
+	public static int menuAttProdutoAux(ArrayList<Products> produtos) {
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		
@@ -131,7 +122,7 @@ public class Menu {
 		
 		System.out.println("Escolha um produto para modificar: ");
 		
-		for (Produto produto : produtos) {	
+		for (Products produto : produtos) {	
 			   System.out.println(i +"-"+produto.formatarProduto());
 			   i++;
 			}
@@ -145,18 +136,18 @@ public class Menu {
 	
 	//Menu atualiza Imposto
 	
-	public static ArrayList<Imposto> menuAtualizaImposto(ArrayList<Imposto> impostos){
+	public static ArrayList<Taxes> menuAtualizaImposto(ArrayList<Taxes> impostos) throws Exception{
 		
 		int impostoIndex = menuAtualizaImpostoAux(impostos);
 		
-		Imposto ImpostoAtualizado = impostos.get(impostoIndex);
+		Taxes ImpostoAtualizado = impostos.get(impostoIndex);
 		
-		impostos.set(impostoIndex, Imposto.atualizaImposto(ImpostoAtualizado));
+		impostos.set(impostoIndex, TaxesUtil.atualizaImposto(ImpostoAtualizado));
 		
 		return impostos;
 	}
 	
-	public static int menuAtualizaImpostoAux(ArrayList<Imposto> impostos) {
+	public static int menuAtualizaImpostoAux(ArrayList<Taxes> impostos) {
 		
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
@@ -165,7 +156,7 @@ public class Menu {
 		
 		System.out.println("Escolha um imposto para modificar: ");
 		
-		for (Imposto imposto : impostos) {	
+		for (Taxes imposto : impostos) {	
 			   System.out.println(i +"-"+imposto.formatarImposto());
 			   i++;
 			}
@@ -178,7 +169,7 @@ public class Menu {
 
 	//Menu Seleciona Produtos para vender
 	
-	public static ArrayList<Produto> menuSeleciona(ArrayList<Produto> produtos, ArrayList<Produto> produtodoVenda){
+	public static ArrayList<Products> menuSeleciona(ArrayList<Products> produtos, ArrayList<Products> produtodoVenda){
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);		
 		
@@ -186,7 +177,7 @@ public class Menu {
 		
 		do {
 			
-			Produto produtoAuxiliar = menuSelecionaProdutoAux(produtos);
+			Products produtoAuxiliar = menuSelecionaProdutoAux(produtos);
 			
 			produtodoVenda.add( produtoAuxiliar);
 			
@@ -198,7 +189,7 @@ public class Menu {
 		return produtodoVenda;
 	}
 	
-	public static Produto menuSelecionaProdutoAux(ArrayList<Produto> produtos) {
+	public static Products menuSelecionaProdutoAux(ArrayList<Products> produtos) {
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		
@@ -206,7 +197,7 @@ public class Menu {
 		
 		System.out.println("Escolha um produto para inserir no carrinho: ");
 		
-		for (Produto produto : produtos) {	
+		for (Products produto : produtos) {	
 			   System.out.println(i +"-"+produto.formatarProduto());
 			   i++;
 			}
@@ -220,7 +211,7 @@ public class Menu {
 	
 	//Menu Exclusao de Produtos
 	
-	public static ArrayList<Produto> menuExcluirVendas(ArrayList<Produto> produtodoVenda){
+	public static ArrayList<Products> menuExcluirVendas(ArrayList<Products> produtodoVenda){
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);		
 		
@@ -228,7 +219,7 @@ public class Menu {
 		
 		do {
 			
-			Produto produtoAuxiliar = menuExcluirVendaProdutoAux(produtodoVenda);
+			Products produtoAuxiliar = menuExcluirVendaProdutoAux(produtodoVenda);
 			
 			produtodoVenda.remove(produtoAuxiliar);
 			
@@ -239,7 +230,7 @@ public class Menu {
 		
 		return produtodoVenda;
 	}
-	public static Produto menuExcluirVendaProdutoAux(ArrayList<Produto> produtos) {
+	public static Products menuExcluirVendaProdutoAux(ArrayList<Products> produtos) {
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		
@@ -247,7 +238,7 @@ public class Menu {
 		
 		System.out.println("Escolha um produto para Excluir da lista de Compras: ");
 		
-		for (Produto produto : produtos) {	
+		for (Products produto : produtos) {	
 			   System.out.println(i +"-"+produto.formatarProduto());
 			   i++;
 			}
@@ -260,20 +251,21 @@ public class Menu {
 	}
 	
 	//Menu Concluir 
-	public static void menuConcluirVenda(ArrayList<Produto> produtodoVenda){
+	public static void menuConcluirVenda(ArrayList<Products> produtodoVenda){
 		
+		ProductsCalcs calculadora = new ProductsCalcs();
 		
 		System.out.println("Venda Concluída!\n");
 
-	    for (Produto produto : produtodoVenda) {
-	        double precoFinal = produto.calculaPrecoFinal();
-	        produto.setPrecoVenda(precoFinal);
+	    for (Products produto : produtodoVenda) {
+	        double precoFinal = calculadora.calculaPrecoFinal();
+	        produto.setSalePrice(precoFinal);
 	        System.out.println(produto.formatarProdutoUltimaListagem());
 	        System.out.println("-------------------------");
 	    }
 
 	    double totalVenda = 0.0;
-	    for (Produto produto : produtodoVenda) {
+	    for (Products produto : produtodoVenda) {
 	        totalVenda += produto.getPrecoVenda();
 	    }
 

@@ -8,10 +8,7 @@ public class Main {
 		maria.setCourse("Sistemas de informação");
 		maria.setSemester((short)4);
 		
-		Professor jose = new Professor(2, "217");
-		jose.setNome("Jose");
-		jose.setLevel("Agronomia");
-		jose.setArea("Informatica");
+		
 		
 		TechnicalAdministrative julia = new TechnicalAdministrative(23, "988");
 		julia.setNome("julia");
@@ -20,7 +17,6 @@ public class Main {
 		
 		printUserData(maria);
 		printUserData(julia);
-		printUserData(jose);
 	}
 	
 	private static void printUserData(User user) {

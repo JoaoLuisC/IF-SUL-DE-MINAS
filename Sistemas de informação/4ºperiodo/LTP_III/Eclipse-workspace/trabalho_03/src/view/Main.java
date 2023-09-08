@@ -1,24 +1,27 @@
+package view;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import model.Menu;
-import model.Produto;
-import model.SetupTeste;
-import model.imposto.Imposto;
+import model.menus.Menu;
+import model.menus.TestSetup;
+import model.products.Products;
+import model.products.util.ProductsUtil;
+import model.taxes.Taxes;
+import model.taxes.util.TaxesUtil;
 
 public class Main {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		@SuppressWarnings({ "resource", "unused" })
 		Scanner scanner = new Scanner(System.in);
 	
-		ArrayList<Imposto> impostos = new ArrayList<>();
-		impostos = SetupTeste.popularImpostos();
+		ArrayList<Taxes> impostos = new ArrayList<>();
+		impostos = TestSetup.popularImpostos();
 		
-		ArrayList<Produto> produtos = new ArrayList<>();
-		produtos = SetupTeste.popularProdutos(impostos);
+		ArrayList<Products> produtos = new ArrayList<>();
+		produtos = TestSetup.popularProdutos(impostos);
 
-		ArrayList<Produto> produtosCompra = new ArrayList<>();
+		ArrayList<Products> produtosCompra = new ArrayList<>();
 		
 		int op = Menu.menuPrincipal();
 		
@@ -32,11 +35,11 @@ public class Main {
 				break;
 				
 				case 2: 
-					Produto.insereProdutos(produtos,impostos);	
+					ProductsUtil.insereProdutos(produtos,impostos);	
 				break;
 				
 				case 3: 
-					Imposto.insereImposto(impostos);					
+					TaxesUtil.insereImposto(impostos);					
 				break;
 				
 				case 4: 
@@ -78,15 +81,3 @@ public class Main {
 	}
 		
 }
-
-/*
-  
-		@SuppressWarnings("unused")
-		int opQuantidadeProduto = 0;
-
-		System.out.println("Digite o numero de Produtos a serem inseridos: ");
-		opQuantidadeProduto = scanner.nextInt(); 
-		
-		@SuppressWarnings("unused")
-		int opProduto = Menu.menuProduto(produtos);
-*/

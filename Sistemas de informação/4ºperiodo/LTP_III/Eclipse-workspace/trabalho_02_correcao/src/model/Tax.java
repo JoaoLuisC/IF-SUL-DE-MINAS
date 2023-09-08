@@ -1,7 +1,7 @@
 package model;
 
 public class Tax {
-	@SuppressWarnings("unused")
+	
 	private String abbr, name;
 	private double aliquot;
 
