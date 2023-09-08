@@ -62,15 +62,15 @@ public class MergeSort {
         public static void mergeSortComentado(int[] vetor, int[] auxiliar, int inicio, int fim) { 
     
             if (inicio < fim){
-                
                 //Achar o meio do vetor 
                 int meio = (inicio + fim) / 2;
                 //chamando o lado esquerdo do inicio ao meio do vetor
-                mergeSortComentado(vetor, auxiliar, inicio, meio);  
+                mergeSortComentado(vetor, auxiliar, inicio, meio);
                 //chamando o lado direito do meio ao fim do vetor
                 mergeSortComentado(vetor, auxiliar, meio+1, fim);
                 //junção dos vetores comparando eles
                 intercalarComentado(vetor, auxiliar, inicio, meio, fim);
+                System.out.println("");
                 
             }
             
@@ -95,26 +95,19 @@ public class MergeSort {
                 int k = 1;
                 
                 if(esq > meio){
-                    System.out.println("comparação "+k+":  O vetor "+auxiliar[esq]+" é MAIOR que o vetor "+vetor[meio]);
+                    System.out.println("1  O vetor "+auxiliar[esq]+" é MAIOR que o vetor "+vetor[meio]);
                     vetor[i] = auxiliar[dir++];
-                    printArray(auxiliar);
-                    k++;
                 }else if (dir > fim){
-                    System.out.println("comparação "+k+":  O vetor "+auxiliar[dir]+" é MAIOR que o vetor "+auxiliar[esq]);
+                    System.out.println("2  O vetor "+auxiliar[dir]+" é MAIOR que o vetor "+auxiliar[esq]);
                     vetor[i] = auxiliar[esq++];
-                    printArray(auxiliar);
-                    k++;
                 }else if (auxiliar[esq]<auxiliar[dir]){//se o numero da esquerda for menor q o numero da direitra
-                    System.out.println("comparação "+k+":  O vetor na posição esqueda "+auxiliar[esq]+" é MENOR que o vetor "+auxiliar[dir]);
+                    System.out.println("3  O vetor na posição esqueda "+auxiliar[esq]+" é MENOR que o vetor "+auxiliar[dir]);
                     vetor[i] = auxiliar[esq++];
-                    printArray(auxiliar);
-                    k++;
                 }else{//se o numero da esquerda for maior q o numero da direitra
-                    System.out.println("comparação "+k+":  O vetor na posição esqueda "+auxiliar[esq]+" é MAIOR que o vetor "+auxiliar[dir]);
+                    System.out.println("4  O vetor na posição esqueda "+auxiliar[esq]+" é MAIOR que o vetor "+auxiliar[dir]);
                     vetor[i] = auxiliar[dir++];
-                    printArray(auxiliar);
-                    k++;
                 }
+                
             }
             System.out.println("---------------------------------");
             printArray(auxiliar);

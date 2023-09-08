@@ -34,7 +34,7 @@ public class Main {
 
             case 1:
                 for (int i = 0; i < vetorPrincipal.length; i++) {
-                    vetorPrincipal[i] = rand.nextInt(50);
+                    vetorPrincipal[i] = rand.nextInt(1000);
                 }
                 break;
 
@@ -53,7 +53,7 @@ public class Main {
         
         op2 = Menus.menuComentado();
         
-        if(op2==1){
+        if(op2==2){
             op = Menus.menuEntradaSorts();
         
         
