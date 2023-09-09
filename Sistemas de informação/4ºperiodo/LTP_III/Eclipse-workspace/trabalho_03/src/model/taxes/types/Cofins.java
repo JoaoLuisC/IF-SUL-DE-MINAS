@@ -2,10 +2,12 @@ package model.taxes.types;
 
 import model.taxes.Taxes;
 
-public class Confins extends Taxes{
+public class Cofins extends Taxes{
 
-	public Confins() {
-		// TODO Auto-generated constructor stub
+	public void valuesCofins() throws Exception {
+		setAbbr("COFINS");
+		setTaxName("Contribuição para o Financiamento da Seguridade Social");
+		setTaxAliquot(12.0);	
 	}
 
 }

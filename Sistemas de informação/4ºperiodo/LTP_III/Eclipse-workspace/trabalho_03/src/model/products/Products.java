@@ -59,6 +59,10 @@ public class Products {
 
 		if (tax == null)
 			throw new Exception("Imposto não pode ser nulo.");
+		
+		if (this.taxes == null) {
+	        this.taxes = new ArrayList<>(); // Inicialize a lista se for nula
+	    }
 
 		for (Taxes t : tax) {
 			if (taxes.contains(t)) {
@@ -66,12 +70,12 @@ public class Products {
 			}
 		}
 
-		this.taxes = tax;
+		this.taxes.addAll(tax);
 	}
 
 	public void setPrecoCusto(double precoCusto) throws Exception {
 
-		if (costPrice <= 0)
+		if (precoCusto <= 0)
 			throw new Exception("Preço de custo está inválido!");
 
 		this.costPrice = precoCusto;
@@ -103,9 +107,9 @@ public class Products {
 	public String formatarProduto() {
 		StringBuilder impostosFormatados = new StringBuilder();
 		if (taxes != null && !taxes.isEmpty()) {
-			impostosFormatados.append("   Impostos: ");
+			impostosFormatados.append("  Impostos: ");
 			for (Taxes imposto : taxes) {
-				impostosFormatados.append(imposto.getTaxName()).append(" (").append(imposto.getTaxAliquot())
+				impostosFormatados.append(imposto.getAbbr()).append(" (").append(imposto.getTaxAliquot())
 						.append("%), ");
 			}
 			// Remover a vírgula e o espaço extras no final

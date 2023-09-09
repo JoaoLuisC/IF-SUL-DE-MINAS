@@ -4,8 +4,10 @@ import model.taxes.Taxes;
 
 public class Icms extends Taxes{
 
-	public Icms() {
-		// TODO Auto-generated constructor stub
+	public void valuesIcms() throws Exception{
+		setAbbr("ICMS  ");
+		setTaxName("Imposto sobre Circulação de Mercadorias e Serviços");
+		setTaxAliquot(7.0);		
 	}
 
 }

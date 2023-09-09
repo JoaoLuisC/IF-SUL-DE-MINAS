@@ -4,18 +4,35 @@ import java.util.Arrays;
 
 import model.products.Products;
 import model.taxes.Taxes;
+import model.taxes.types.Cide;
+import model.taxes.types.Cofins;
+import model.taxes.types.Csll;
+import model.taxes.types.Icms;
+import model.taxes.types.Ipi;
+import model.taxes.types.Iss;
 
 public class TestSetup{
 	
 	public static ArrayList<Taxes> popularImpostos() throws Exception {
         ArrayList<Taxes> impostos = new ArrayList<>();
 
-        Taxes icms = new Taxes("Confins","Imposto sobre Circulação de Mercadorias e Serviços", 7.0);
-        Taxes confins = new Taxes("ICMS","Contribuição para o Financiamento da Seguridade Social", 12.0);
-        Taxes ipi = new Taxes("ISS","Contribuição para o Financiamento da Seguridade Social", 8.0);
-        Taxes iss = new Taxes("IPI","Imposto sobre Serviços de Qualquer Natureza", 5.0);
-        Taxes cide = new Taxes("Cide","Contribuição de Intervenção no Domínio Econômico", 10.0);
-        Taxes csll = new Taxes("CSLL","Contribuição Social sobre o Lucro Líquido", 4.0);
+        Icms icms = new Icms();
+        icms.valuesIcms();
+
+        Cofins confins = new Cofins();
+        confins.valuesCofins();
+
+        Ipi ipi = new Ipi();
+        ipi.valuesIpi();
+
+        Iss iss = new Iss();
+        iss.valuesIss();
+
+        Cide cide = new Cide();
+        cide.valuesCide();
+
+        Csll csll = new Csll();
+        csll.valuesCsll();
 
         impostos.add(icms);
         impostos.add(confins);
