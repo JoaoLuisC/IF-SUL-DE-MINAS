@@ -252,12 +252,11 @@ public class Menu {
 	
 	//Menu Concluir 
 	public static void menuConcluirVenda(ArrayList<Products> produtodoVenda){
-		
-		ProductsCalcs calculadora = new ProductsCalcs();
-		
+				
 		System.out.println("Venda Concluída!\n");
 
 	    for (Products produto : produtodoVenda) {
+	    	ProductsCalcs calculadora = new ProductsCalcs();
 	        double precoFinal = calculadora.calculaPrecoFinal();
 	        produto.setSalePrice(precoFinal);
 	        System.out.println(produto.formatarProdutoUltimaListagem());

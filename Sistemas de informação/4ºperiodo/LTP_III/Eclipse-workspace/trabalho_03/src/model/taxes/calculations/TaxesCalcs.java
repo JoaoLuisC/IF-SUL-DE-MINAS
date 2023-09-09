@@ -12,9 +12,13 @@ public class TaxesCalcs extends Taxes{
 		double somaImpostos = 0.0;
 
 		ArrayList<Taxes> impostosDoProduto = produto.getImpostos();
-		for (Taxes imposto : impostosDoProduto) {
-			somaImpostos += imposto.getTaxAliquot();
-		}
+		
+		
+		if (impostosDoProduto != null) {
+	        for (Taxes imposto : impostosDoProduto) {
+	            somaImpostos += imposto.getTaxAliquot();
+	        }
+	    }
 
 		return somaImpostos;
 	}

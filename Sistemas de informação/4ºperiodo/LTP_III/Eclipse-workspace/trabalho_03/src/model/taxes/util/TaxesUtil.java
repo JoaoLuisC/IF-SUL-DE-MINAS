@@ -14,9 +14,14 @@ public class TaxesUtil extends Taxes{
 
 			Taxes imposto = new Taxes();
 
+			System.out.println("Digite a abreviação do Imposto:\n");
+			String abbrImposto = scanner.nextLine();
+			imposto.setTaxAbbr(abbrImposto);
+			
 			System.out.println("Digite o nome do Imposto:\n");
 			String nomeImposto = scanner.nextLine();
 			imposto.setTaxName(nomeImposto);
+
 
 			System.out.println("Digite a taxa do Imposto:\n");
 			double taxaImposto = scanner.nextDouble();
@@ -32,6 +37,10 @@ public class TaxesUtil extends Taxes{
 			@SuppressWarnings("resource")
 			Scanner scanner = new Scanner(System.in);
 
+			System.out.println("Digite a abreviação do Imposto:\n");
+			String abbrImposto = scanner.nextLine();
+			impostoAtualizado.setTaxAbbr(abbrImposto);
+			
 			System.out.println("Digite o nome do Imposto:\n");
 			String nomeImposto = scanner.nextLine();
 			impostoAtualizado.setTaxName(nomeImposto);

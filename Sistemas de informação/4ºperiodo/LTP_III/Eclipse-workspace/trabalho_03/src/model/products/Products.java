@@ -17,15 +17,14 @@ public class Products {
 	public Products() {
 
 	}
-
-	
-	public Products(double precoCusto, String nomeProduto, double margemLucro, ArrayList<Taxes> taxes)
+	public Products(double precoCusto, String nomeProduto, double margemLucro, ArrayList<Taxes> taxes, boolean isNational)
 			throws Exception {
 		super();
 		setPrecoCusto(precoCusto);
 		setNomeProduto(nomeProduto);
 		setMargemLucro(margemLucro);
 		setTax(taxes);
+		setNational(isNational);
 	}
 
 	// GETTERS dos Produtos
@@ -50,6 +49,10 @@ public class Products {
 		return taxes;
 	}
 
+	public boolean isNational() {
+		return isNational;
+	}
+
 	// SETTERS de Produtos
 	public void setSalePrice(double precoVenda) {
 		this.salePrice = precoVenda;
@@ -60,15 +63,25 @@ public class Products {
 		if (tax == null)
 			throw new Exception("Imposto não pode ser nulo.");
 		
-		if (this.taxes == null) {
-	        this.taxes = new ArrayList<>(); // Inicialize a lista se for nula
-	    }
-
 		for (Taxes t : tax) {
 			if (taxes.contains(t)) {
 				throw new Exception("Imposto já contido no produto.");
 			}
 		}
+		
+		boolean containsISS = false;
+	    for (Taxes taxe : tax) {
+	        if ("ISS".equals(taxe.getAbbr())) {
+	            containsISS = true;
+	            break;
+	        }
+	    }
+
+	    if (containsISS) {
+	        // Faça algo se 'tax' contiver um elemento com 'taxAbbr' igual a "ISS"
+	    } else {
+	        // Faça algo se 'tax' não contiver nenhum elemento com 'taxAbbr' igual a "ISS"
+	    }
 
 		this.taxes.addAll(tax);
 	}
@@ -126,7 +139,7 @@ public class Products {
 		if (taxes != null && !taxes.isEmpty()) {
 			impostosFormatados.append("   Impostos: ");
 			for (Taxes imposto : taxes) {
-				impostosFormatados.append(imposto.getTaxName()).append(", ");
+				impostosFormatados.append(imposto.getAbbr()).append(", ");
 			}
 			// Remover a vírgula e o espaço extras no final
 			impostosFormatados.setLength(impostosFormatados.length() - 2);

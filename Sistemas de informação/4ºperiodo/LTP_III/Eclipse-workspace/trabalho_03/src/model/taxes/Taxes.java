@@ -12,7 +12,7 @@ public class Taxes {
 
 	public Taxes(String abbr, String name, double aliquot) throws Exception {
 		super();
-		setAbbr(abbr);
+		setTaxAbbr(abbr);
 		setTaxName(name);
 		setTaxAliquot(aliquot);
 	}
@@ -42,7 +42,7 @@ public class Taxes {
 		this.name = nomeImposto;
 	}
 
-	public void setAbbr(String abbr) throws Exception {
+	public void setTaxAbbr(String abbr) throws Exception {
 
 		if (abbr == null || abbr.equals(""))
 			throw new Exception("Sigla Inválida!");

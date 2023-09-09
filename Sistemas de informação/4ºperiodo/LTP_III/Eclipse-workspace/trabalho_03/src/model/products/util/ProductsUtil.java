@@ -43,6 +43,15 @@ public class ProductsUtil extends Products{
 			
 		    produto.setTax(impostosSelecionados);
 			
+		    
+		    System.out.println("Digite [1] para produto nacional ou [2] para produto internacional");
+		    int isNational = scanner.nextInt();
+		    if(isNational == 1)
+		    	produto.setNational(true);
+		    else
+		    	produto.setNational(false);
+		    
+		    
 			produtos.add(produto);
 
 			
@@ -81,6 +90,15 @@ public class ProductsUtil extends Products{
 			
 		    produtoATT.setTax(impostosSelecionados);
 
+		    
+		    System.out.println("Digite [1] para produto nacional ou [2] para produto internacional");
+		    int isNational = scanner.nextInt();
+		    if(isNational == 1)
+		    	produtoATT.setNational(true);
+		    else
+		    	produtoATT.setNational(false);
+		    
+		    
 			return produtoATT;
 
 		}
