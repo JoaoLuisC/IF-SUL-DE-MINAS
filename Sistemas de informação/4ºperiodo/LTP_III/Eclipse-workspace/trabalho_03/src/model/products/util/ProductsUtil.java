@@ -13,9 +13,7 @@ public class ProductsUtil extends Products{
 		public static ArrayList<Products> insereProdutos(ArrayList<Products> produtos,ArrayList<Taxes> impostos ) throws Exception {
 			@SuppressWarnings("resource")
 			Scanner scanner = new Scanner(System.in);		
-			
-			ArrayList<Taxes> impostosSelecionados = new ArrayList<>();
-			
+						
 			Products produto = new Products();
 
 			System.out.println("Digite o nome do Produto:\n");
@@ -35,14 +33,14 @@ public class ProductsUtil extends Products{
 		    do {
 		    	System.out.println("Escolha o Imposto");
 		    	
-		    	impostosSelecionados.add(Menu.menuImpostosInserirProduto(impostos));
+		    	 Taxes selectedTax = Menu.menuImpostosInserirProduto(impostos);
+		         produto.getImpostos().add(selectedTax);
 			    	
 		    	numImpostos --;
 		    	
 			} while (numImpostos!=0);
 			
-		    produto.setTax(impostosSelecionados);
-			
+
 		    
 		    System.out.println("Digite [1] para produto nacional ou [2] para produto internacional");
 		    int isNational = scanner.nextInt();
@@ -63,7 +61,7 @@ public class ProductsUtil extends Products{
 			@SuppressWarnings("resource")
 			Scanner scanner = new Scanner(System.in);		
 			
-			ArrayList<Taxes> impostosSelecionados = new ArrayList<>();
+			produtoATT.getImpostos().clear();
 			
 			System.out.println("Digite o nome do Produto:\n");
 			String nomeProduto = scanner.nextLine();
@@ -82,14 +80,13 @@ public class ProductsUtil extends Products{
 		    do {
 		    	System.out.println("Escolha o Imposto");
 		    	
-		    	impostosSelecionados.add(Menu.menuImpostosInserirProduto(impostos));
-			    	
+		    	Taxes selectedTax = Menu.menuImpostosInserirProduto(impostos);
+		        produtoATT.getImpostos().add(selectedTax);
+		    	
 		    	numImpostos --;
 		    	
 			} while (numImpostos!=0);
 			
-		    produtoATT.setTax(impostosSelecionados);
-
 		    
 		    System.out.println("Digite [1] para produto nacional ou [2] para produto internacional");
 		    int isNational = scanner.nextInt();

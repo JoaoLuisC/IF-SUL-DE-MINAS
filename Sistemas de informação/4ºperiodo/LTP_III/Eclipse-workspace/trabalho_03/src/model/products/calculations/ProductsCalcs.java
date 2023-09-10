@@ -15,5 +15,9 @@ public class ProductsCalcs extends Products{
 			
 			return precoFinal;
 		}
+		
+		public void verifyTax() {
+			
+		}
 
 }

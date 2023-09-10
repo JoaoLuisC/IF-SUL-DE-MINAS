@@ -3,6 +3,9 @@ package model.products;
 import java.util.ArrayList;
 
 import model.taxes.Taxes;
+import model.taxes.calculations.TaxesCalcs;
+import model.taxes.types.Icms;
+import model.taxes.types.Ipi;
 
 public class Products {
 
@@ -17,14 +20,13 @@ public class Products {
 	public Products() {
 
 	}
-	public Products(double precoCusto, String nomeProduto, double margemLucro, ArrayList<Taxes> taxes, boolean isNational)
-			throws Exception {
+	public Products(double precoCusto, String nomeProduto, double margemLucro, ArrayList<Taxes> taxes, boolean isNational)throws Exception {
 		super();
 		setPrecoCusto(precoCusto);
 		setNomeProduto(nomeProduto);
 		setMargemLucro(margemLucro);
-		setTax(taxes);
 		setNational(isNational);
+		this.taxes = new ArrayList<>();
 	}
 
 	// GETTERS dos Produtos
@@ -58,32 +60,25 @@ public class Products {
 		this.salePrice = precoVenda;
 	}
 
-	public void setTax(ArrayList<Taxes> tax) throws Exception {
+	public boolean setTax(Taxes tax) throws Exception {
 
 		if (tax == null)
 			throw new Exception("Imposto não pode ser nulo.");
 		
-		for (Taxes t : tax) {
-			if (taxes.contains(t)) {
-				throw new Exception("Imposto já contido no produto.");
-			}
-		}
+		if (taxes.contains(tax))
+			return false;
+		else
+			taxes.add(tax);
+			
 		
-		boolean containsISS = false;
-	    for (Taxes taxe : tax) {
-	        if ("ISS".equals(taxe.getAbbr())) {
-	            containsISS = true;
-	            break;
-	        }
-	    }
-
-	    if (containsISS) {
-	        // Faça algo se 'tax' contiver um elemento com 'taxAbbr' igual a "ISS"
-	    } else {
-	        // Faça algo se 'tax' não contiver nenhum elemento com 'taxAbbr' igual a "ISS"
-	    }
-
-		this.taxes.addAll(tax);
+		/*if ("IPI".equals(tax.getAbbr())) {
+	           Ipi ipi = new Ipi(); 
+	           ipi.validatesNationality(this); 
+	    }*/			
+		
+		
+				
+		return true;
 	}
 
 	public void setPrecoCusto(double precoCusto) throws Exception {
