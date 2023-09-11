@@ -5,9 +5,9 @@ import model.taxes.Taxes;
 
 public class Ipi extends Taxes{
 
-	
+		
 	public void validatesNationality(Products produto) throws Exception {
-		if(produto.isNational()) 
+		if(produto.getIsNational()) 
 			setTaxAliquot(8.0);	
 		else 
 			setTaxAliquot(10.0);

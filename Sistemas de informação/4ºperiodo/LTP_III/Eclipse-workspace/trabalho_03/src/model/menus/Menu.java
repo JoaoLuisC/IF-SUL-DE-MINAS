@@ -257,7 +257,7 @@ public class Menu {
 
 	    for (Products produto : produtodoVenda) {
 	    	ProductsCalcs calculadora = new ProductsCalcs();
-	        double precoFinal = calculadora.calculaPrecoFinal();
+	        double precoFinal = calculadora.calculaPrecoFinal(produto); 
 	        produto.setSalePrice(precoFinal);
 	        System.out.println(produto.formatarProdutoUltimaListagem());
 	        System.out.println("-------------------------");

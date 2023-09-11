@@ -31,9 +31,9 @@ public class Taxes {
 	}
 
 	// SETTERS imposto
-	public void setTaxAliquot(double taxaImposto) throws Exception {
-		if(taxaImposto <= 0 || taxaImposto == 1)
-			throw new Exception("Valor Inválido!");
+	public void setTaxAliquot(double taxaImposto) throws IllegalArgumentException {
+		if(taxaImposto <= 0)
+			throw new IllegalArgumentException("Valor Inválido!");
 		this.aliquot = taxaImposto;
 	}
 

@@ -3,7 +3,6 @@ package model.products;
 import java.util.ArrayList;
 
 import model.taxes.Taxes;
-import model.taxes.calculations.TaxesCalcs;
 import model.taxes.types.Icms;
 import model.taxes.types.Ipi;
 
@@ -13,19 +12,20 @@ public class Products {
 	private String productName;
 	private double profitMargin;
 	private double salePrice;
-	private ArrayList<Taxes> taxes;
 	private boolean isNational;
+	private ArrayList<Taxes> taxes;
 
 	// CONSTRUTOR
 	public Products() {
 
 	}
-	public Products(double precoCusto, String nomeProduto, double margemLucro, ArrayList<Taxes> taxes, boolean isNational)throws Exception {
+
+	public Products(double precoCusto, String nomeProduto, double margemLucro,boolean isNational) throws Exception {
 		super();
 		setPrecoCusto(precoCusto);
 		setNomeProduto(nomeProduto);
 		setMargemLucro(margemLucro);
-		setNational(isNational);
+		this.isNational = isNational;
 		this.taxes = new ArrayList<>();
 	}
 
@@ -51,7 +51,7 @@ public class Products {
 		return taxes;
 	}
 
-	public boolean isNational() {
+	public boolean getIsNational() {
 		return isNational;
 	}
 
@@ -60,25 +60,25 @@ public class Products {
 		this.salePrice = precoVenda;
 	}
 
-	public boolean setTax(Taxes tax) throws Exception {
-
-		if (tax == null)
-			throw new Exception("Imposto não pode ser nulo.");
-		
-		if (taxes.contains(tax))
-			return false;
-		else
-			taxes.add(tax);
-			
-		
-		/*if ("IPI".equals(tax.getAbbr())) {
-	           Ipi ipi = new Ipi(); 
-	           ipi.validatesNationality(this); 
-	    }*/			
-		
-		
+	public void setTaxes(ArrayList<Taxes> tax) throws Exception {
 				
-		return true;
+		for (Taxes imposto : tax) {
+	        if (imposto.getAbbr().equalsIgnoreCase("IPI")) { 
+	            imposto.setTaxAliquot(this.getIsNational() ? 10.0 : 8.0); 
+	            break;
+	        }
+	    }
+		
+		if (hasICMS(tax) == true && hasIPI()==true) {
+	        for (Taxes imposto : tax) {
+	            if (imposto.getAbbr().equalsIgnoreCase("ICMS")) {
+	                imposto.setTaxAliquot(7.0); 
+	            }
+	        }
+	    }
+			
+		this.taxes = tax;
+		
 	}
 
 	public void setPrecoCusto(double precoCusto) throws Exception {
@@ -109,7 +109,38 @@ public class Products {
 	}
 
 	// ----------------------------------------------------------------------------------
+	
+	public boolean addTax(Taxes tax) throws Exception {
 
+		if (tax == null)
+			throw new Exception("Imposto não pode ser nulo.");
+
+		if (taxes.contains(tax))
+			return false;
+		else
+			taxes.add(tax);
+
+		return true;
+	}
+	
+	public boolean hasIPI() {
+	    for (Taxes imposto : taxes) {
+	        if (imposto.getAbbr().equalsIgnoreCase("IPI")) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+	
+	public boolean hasICMS(ArrayList<Taxes> tax) {
+	    for (Taxes imposto : tax) {
+	        if (imposto.getAbbr().equalsIgnoreCase("ICMS")) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+	
 	// metodo de StringFormat para devolver strings formatadas(usei o gpt nesse
 	// metodo)
 	public String formatarProduto() {
@@ -124,8 +155,10 @@ public class Products {
 			impostosFormatados.setLength(impostosFormatados.length() - 2);
 		}
 
-		return String.format("Produto: %s | Preço Custo: R$%.2f | Margem Lucro: %.0f%%\n%s", productName, costPrice,
-				profitMargin, impostosFormatados.toString());
+		String nacionalidade = isNational ? "Nacional" : "Importado"; // Verifica se é nacional ou importado
+
+		return String.format("Produto: %s | Preço Custo: R$%.2f | Margem Lucro: %.0f%% | Nacionalidade: %s\n%s",
+				productName, costPrice, profitMargin, nacionalidade, impostosFormatados.toString());
 	}
 
 	// metodo de StringFormat para devolver strings formatadas na ultima listagem

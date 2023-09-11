@@ -142,7 +142,7 @@ public class Menu {
 	
 	//Menu atualiza Imposto
 	
-	public static ArrayList<Imposto> menuAtualizaImposto(ArrayList<Imposto> impostos){
+	public static ArrayList<Imposto> menuAtualizaImposto(ArrayList<Imposto> impostos) throws Exception{
 		
 		int impostoIndex = menuAtualizaImpostoAux(impostos);
 		
