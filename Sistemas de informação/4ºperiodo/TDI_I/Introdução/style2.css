@@ -1,7 +1,10 @@
 *{
     margin: 0px;
     padding: 0px;
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+
 
 h1, p, ul{
     margin: 10px;
@@ -13,8 +16,13 @@ p{
 }
 
 #first{
-    font-size: 25px;
+    text-indent: 25px;
 }
 #first::first-letter{
-    font-size: 2em;
+    font-size: 25px;
+}
+
+.highlight { 
+    background-color: yellow;
+    font-weight: bold;
 }
