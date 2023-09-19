@@ -11,8 +11,14 @@
     <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="Produto"/>
-    <fullyQualifiedTypeName name="Imposto"/>
     <fullyQualifiedTypeName name="Menu"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="model.configurations.Menu"/>
+    <fullyQualifiedTypeName name="model.products.Products"/>
+    <fullyQualifiedTypeName name="model.products.calculations.ProductsCalcs"/>
+    <fullyQualifiedTypeName name="Imposto"/>
+    <fullyQualifiedTypeName name="model.taxes.Taxes"/>
+    <fullyQualifiedTypeName name="model.taxes.util.TaxesUtil"/>
+    <fullyQualifiedTypeName name="model.taxes.types.Ipi"/>
+    <fullyQualifiedTypeName name="model.taxes.types.Icms"/>
 </qualifiedTypeNameHistroy>
