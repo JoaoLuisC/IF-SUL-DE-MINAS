@@ -93,6 +93,11 @@ public class FormSistema extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabelaDados);
 
         cbOrdena.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Data", "Cidade", "Minima", "Máxima", "Vento Min", "Vento Max", " " }));
+        cbOrdena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbOrdenaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -209,6 +214,10 @@ public class FormSistema extends javax.swing.JFrame {
        // switch case para escolher por qual comparador ordenar
         mostra();
     }//GEN-LAST:event_btnOrdNomeActionPerformed
+
+    private void cbOrdenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbOrdenaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbOrdenaActionPerformed
 
     /**
      * @param args the command line arguments
