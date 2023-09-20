@@ -2,108 +2,58 @@
 package javasort;
 //import java.lang.Comparable;
 public class Dados implements Comparable<Dados>{
-   private String data;
+   private int ibgeCode;
    private String cidade;
-   private String condicao;
-   private String temperaturaTendencia;
-   private int temperaturaMinima;
-   private int temperaturaMaxima;
-   private int ventoVelocidadeMinima;
-   private int ventoVelocidadeMaxima;
-   private String ventoDirecao;
+   private int pop2018;
+   private double IDH;
+   private double pib2014;
 
-
-    public String getData() {
-        return data;
+    public int getIbgeCode() {
+        return ibgeCode;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public void setIbgeCode(int ibgeCode) {
+        this.ibgeCode = ibgeCode;
     }
-
 
     public String getCidade() {
         return cidade;
     }
 
-
     public void setCidade(String cidade) {
         this.cidade = cidade;
     }
 
-    public String getCondicao() {
-        return condicao;
+    public int getPop2018() {
+        return pop2018;
+    }
+
+    public void setPop2018(int pop2018) {
+        this.pop2018 = pop2018;
+    }
+
+    public double getIDH() {
+        return IDH;
+    }
+
+    public void setIDH(double IDH) {
+        this.IDH = IDH;
+    }
+
+    public double getPib2014() {
+        return pib2014;
+    }
+
+    public void setPib2014(double pib2014) {
+        this.pib2014 = pib2014;
     }
 
 
-    public void setCondicao(String condicao) {
-        this.condicao = condicao;
-    }
-
-
-    public String getTemperaturaTendencia() {
-        return temperaturaTendencia;
-    }
-
-    public void setTemperaturaTendencia(String temperaturaTendencia) {
-        this.temperaturaTendencia = temperaturaTendencia;
-    }
-
-
-    public int getTemperaturaMinima() {
-        return temperaturaMinima;
-    }
-
-
-    public void setTemperaturaMinima(int temperaturaMinima) {
-        this.temperaturaMinima = temperaturaMinima;
-    }
-
-
-    public int getTemperaturaMaxima() {
-        return temperaturaMaxima;
-    }
-
-
-    public void setTemperaturaMaxima(int temperaturaMaxima) {
-        this.temperaturaMaxima = temperaturaMaxima;
-    }
-
-
-    public int getVentoVelocidadeMinima() {
-        return ventoVelocidadeMinima;
-    }
-
-    public void setVentoVelocidadeMinima(int ventoVelocidadeMinima) {
-        this.ventoVelocidadeMinima = ventoVelocidadeMinima;
-    }
- 
-    public int getVentoVelocidadeMaxima() {
-        return ventoVelocidadeMaxima;
-    }
-
-    public void setVentoVelocidadeMaxima(int ventoVelocidadeMaxima) {
-        this.ventoVelocidadeMaxima = ventoVelocidadeMaxima;
-    }
-
-     public String getVentoDirecao() {
-        return ventoDirecao;
-    }
-
-    public void setVentoDirecao(String ventoDirecao) {
-        this.ventoDirecao = ventoDirecao;
-    }
-    
     @Override    
     public int compareTo(Dados outroDado){
       return this.getCidade().
               compareTo(outroDado.getCidade());
     }
     
-    
-     @Override
-    public String toString(){
-        return getCidade()+ " : " + getCondicao() ;
-    }// fim toString
     
 }
