@@ -1,0 +1,30 @@
+h1{
+    background-color: black;
+    color: white;
+}
+
+.p2{
+    background-color: #f00;
+}
+
+span{
+    background-color: rgba(123, 123, 192, 0.753);
+}
+
+#div1{
+    width: 10em;
+    height: 10em;
+    background-color: blueviolet;
+}
+
+#div2{
+    width: 10em;
+    height: 10em;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,0.6839110644257703) 0%, rgba(5,88,110,1) 22%, rgba(6,141,154,1) 51%, rgba(52,83,194,1) 84%);
+}
+
+.p1{
+    background-color: rgba(0, 0, 0, 0.418);    
+    color: whitesmoke;
+}
