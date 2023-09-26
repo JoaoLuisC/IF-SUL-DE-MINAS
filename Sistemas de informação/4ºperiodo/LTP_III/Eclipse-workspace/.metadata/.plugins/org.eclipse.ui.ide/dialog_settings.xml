@@ -14,6 +14,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\15615141603\IFSulDeMinas\IF-SUL-DE-MINAS\Sistemas de informação\4ºperiodo\LTP_III\Eclipse-workspace\trabalho_03_correcao"/>
 			<item value="C:\Users\joaol\OneDrive\Documentos\IF_Repositorio\IF-SUL-DE-MINAS\Sistemas de informação\4ºperiodo\LTP_III\Eclipse-workspace\trabalho_03"/>
 			<item value="C:\Users\joaol\OneDrive\Documentos\IF_Repositorio\IF-SUL-DE-MINAS\Sistemas de informação\4ºperiodo\LTP_III\Eclipse-workspace\trabalho_02_correcao"/>
 		</list>
