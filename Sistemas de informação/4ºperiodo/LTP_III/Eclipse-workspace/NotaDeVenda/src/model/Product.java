@@ -2,20 +2,35 @@ package model;
 
 public class Product {
 	private String name;
-	private double costPrice;
-	private int amount;
+	private double salePrice;
+	private int stock;
 	
-	public Product(String name , double costPrice, int amount) throws Exception {
+	//CONSTRUTOR	
+	
+	public Product(String name , double salePrice, int stock) throws Exception {
 		setName(name);
-		setCostPrice(costPrice);
-		setAmount(amount);
+		setSalePrice(salePrice);
+		setStock(stock);
 	}
 	
-	private void setAmount(int amount) throws Exception {
-		if(amount <= 0)
+	//Metodos
+	
+	protected static boolean stockValidate(Product prod, int amount) throws Exception {
+		if (prod.stock >= amount)
+			return true;
+		else if (prod.stock <= 0)
+			throw new Exception("Sem estoque!");
+		else
+			throw new Exception("Quantidade de " + prod.getName() + " Indísponível!");
+	}
+	
+	//GETTERS
+	
+	private void setStock(int stock) throws Exception {
+		if(stock <= 0)
 			throw new Exception("Quantida de estoque invalida");
 		else
-			this.amount = amount;
+			this.stock = stock;
 	}
 	
 	private void setName(String name)throws Exception{
@@ -25,21 +40,23 @@ public class Product {
 			this.name = name;
 	}
 	
-	private void setCostPrice(double costPrice) throws Exception{
-		if(costPrice <= 0)
+	private void setSalePrice(double salePrice) throws Exception{
+		if(salePrice <= 0)
 			throw new Exception ("Valor invalido");
 		else
-			this.costPrice = costPrice;
+			this.salePrice = salePrice;
 	}
 	
-	private String getName() {
+	//SETTERS
+	
+	public String getName() {
 		return this.name;
 	}
-	private Double getCostPrice() {
-		return this.costPrice;
+	public Double getSalePrice() {
+		return this.salePrice;
 	}
-	private int getAmount() {
-		return this.amount;
+	public int getStock() {
+		return this.stock;
 	}
 	
 	

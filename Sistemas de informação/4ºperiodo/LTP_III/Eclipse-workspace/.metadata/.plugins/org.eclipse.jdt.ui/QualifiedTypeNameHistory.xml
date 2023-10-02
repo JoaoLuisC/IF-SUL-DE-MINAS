@@ -11,7 +11,6 @@
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="Produto"/>
     <fullyQualifiedTypeName name="Menu"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="model.configurations.Menu"/>
     <fullyQualifiedTypeName name="model.products.Products"/>
     <fullyQualifiedTypeName name="model.products.calculations.ProductsCalcs"/>
@@ -21,4 +20,8 @@
     <fullyQualifiedTypeName name="model.taxes.types.Ipi"/>
     <fullyQualifiedTypeName name="model.taxes.types.Icms"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="model.Product"/>
+    <fullyQualifiedTypeName name="model.Sale"/>
 </qualifiedTypeNameHistroy>
