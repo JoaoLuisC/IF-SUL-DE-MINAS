@@ -1,0 +1,17 @@
+div{
+    background-color: #ccc;
+    height: 10em;
+    width: 50%;
+    margin-left: 25%;
+}
+
+p{  
+    display: block;
+    justify-content:center ;
+    background-color:rgb(176, 130, 219);
+    margin: 10px;
+}
+
+h1{
+    text-align: center;
+}
