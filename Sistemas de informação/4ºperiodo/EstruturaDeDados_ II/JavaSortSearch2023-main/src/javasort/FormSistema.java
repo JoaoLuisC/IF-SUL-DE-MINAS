@@ -277,7 +277,6 @@ public class FormSistema extends javax.swing.JFrame {
     private void btnOrdenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenaActionPerformed
           String colunaSelecionada = (String) cbOrdena.getSelectedItem();
     
-        // Verifique a coluna selecionada e ordene de acordo com a escolha
         switch (colunaSelecionada) {
             case "IBGE code":
                 ordenarPorIBGECode();
@@ -291,7 +290,6 @@ public class FormSistema extends javax.swing.JFrame {
             case "PIB":
                 ordenarPorPIB();
                 break;
-            // Adicione outros casos conforme necessário
         }
         mostra();
     }//GEN-LAST:event_btnOrdenaActionPerformed
@@ -356,14 +354,11 @@ public class FormSistema extends javax.swing.JFrame {
                     break;
             }
         } else if (jRadioButtonBinaria.isSelected()) {
-                // Verifique qual coluna foi selecionada na combobox
             String colunaBusca = (String) cbBusca.getSelectedItem();
             String termoBusca = jTextBusca.getText();
 
-            // Verifique a coluna de busca selecionada
            switch (colunaBusca) {
                 case "Cidade":
-                    // Ordenar a lista de dados com base na coluna "Cidade"
                     Collections.sort(lista);
                     int resultadoBuscaCidade = buscaBinariaCidade(termoBusca);
 
@@ -372,21 +367,17 @@ public class FormSistema extends javax.swing.JFrame {
                         DefaultTableModel model = (DefaultTableModel) tabelaDados.getModel();
                         model.setRowCount(0);
 
-                        // Obtém o resultado da busca binária
                         Dados cidadeEncontrada = lista.get(resultadoBuscaCidade);
 
-                        // Adiciona o resultado à tabela
                         Object[] rowData = {cidadeEncontrada.getIbgeCode(), cidadeEncontrada.getCidade(),
                                             cidadeEncontrada.getPop2018(), cidadeEncontrada.getIDH(),
                                             cidadeEncontrada.getPib2014()};
                         model.addRow(rowData);
                     } else {
-                        // Mostrar mensagem se não encontrar
                         labelComparacoes.setText("Não existe na base de dados");
                     }
                     break;
                 case "IBGE code":
-                    // Ordenar a lista de dados com base na coluna "IBGE code"
                     Collections.sort(lista, new Comparator<Dados>() {
                         @Override
                         public int compare(Dados d1, Dados d2) {
@@ -409,7 +400,6 @@ public class FormSistema extends javax.swing.JFrame {
                         labelComparacoes.setText("Não existe na base de dados");
                     }
                     break;
-                // Adicione casos para outras colunas, se necessário
             }
         }
         
