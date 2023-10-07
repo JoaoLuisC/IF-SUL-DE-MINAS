@@ -85,6 +85,10 @@ header{
     font-size: 3em;
 }
 
+main {
+    margin-bottom: 3em; 
+}
+
 /* LINK CINEMAS*/
 .main-div-cinemas{
     margin: 0 auto;
@@ -201,7 +205,7 @@ header{
 /* FOOTER*/
 
 .footer {
-    position:absolute;
+    position:relative;
     bottom: 0;
     left: 0;
     right: 0;
