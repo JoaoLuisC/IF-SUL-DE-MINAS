@@ -65,7 +65,7 @@ body {
     background: rgb(110, 110, 110);
     background: radial-gradient(circle, rgba(110, 110, 110, 1) 23%, rgba(0, 0, 0, 1) 79%);
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Tornar a posição do background fixa */
+    background-attachment: fixed; 
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     min-height: 100vh;
