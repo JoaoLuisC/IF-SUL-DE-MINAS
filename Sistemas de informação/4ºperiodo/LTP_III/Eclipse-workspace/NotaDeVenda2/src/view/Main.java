@@ -1,5 +1,7 @@
 package view;
 
+import java.util.Scanner;
+
 import model.Product;
 import model.Sale;
 import model.SaleItem;
@@ -7,6 +9,7 @@ import model.SaleItem;
 public class Main {
 
 	public static void main(String[] args) {
+		
 		Product arroz = new Product("Arroz pileco T1", 15);
 		Product feijao = new Product("Feijão Malicia", 20);
 
@@ -26,6 +29,15 @@ public class Main {
 			System.out.print("Sub Total: R$" +saleItem.getSaleItemSubTotal() + "\n");
 		}
 		System.out.println("Total: R$" + sale.getTotal());
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 

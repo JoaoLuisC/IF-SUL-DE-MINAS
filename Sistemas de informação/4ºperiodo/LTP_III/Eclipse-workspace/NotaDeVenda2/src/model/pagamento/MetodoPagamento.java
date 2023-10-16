@@ -4,10 +4,13 @@ import java.util.Scanner;
 
 public class MetodoPagamento {
 	
-	private static int op;	
 	
 	
-	private int opMetodo(){
+	
+	private static int opMetodo(){
+		
+		int op;
+		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Escolha a forma de pagamento:");
@@ -17,7 +20,11 @@ public class MetodoPagamento {
 		
 		op = sc.nextInt();
 		
+		return op;
+		
 	}
+	
+	private static void
 	
 	
 	
