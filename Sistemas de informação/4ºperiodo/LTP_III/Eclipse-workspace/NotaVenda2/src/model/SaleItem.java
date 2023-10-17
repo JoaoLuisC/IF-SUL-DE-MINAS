@@ -5,8 +5,14 @@ public class SaleItem {
 	private Product product;
 	private int amount;
 	
-	public SaleItem(Product p, int amount) {
-		this.product = p;
+	public SaleItem(String codProduct, int amount) {
+		
+		String[] prodDesc = DataBaseProducts.getProductDescription(codProduct);
+		
+		String productDescription = prodDesc[0];
+		double productPrice = Double.parseDouble(prodDesc[1]);
+		
+		this.product = new Product(productDescription,productPrice);
 		this.amount = amount;
 	}
 	

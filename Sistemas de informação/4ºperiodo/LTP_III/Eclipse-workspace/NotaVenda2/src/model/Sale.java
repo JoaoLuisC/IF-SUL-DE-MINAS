@@ -9,7 +9,6 @@ public class Sale {
 
 	private Date date;
 	private List<SaleItem> items;
-	private ArrayList<Product> listProducts;
 
 	public Sale() {
 		this.date = Calendar.getInstance().getTime();
@@ -21,11 +20,23 @@ public class Sale {
 		return this.date;
 	}
 
-	public List<SaleItem> getSaleItem() {
-		return this.items;
+	public List<String> getSaleItem() {
+		List<String> saleItemString = new ArrayList<>();
+		
+		for (SaleItem si : this.items) {
+			String item = String.format("%s - %d - R$%.2f - R$%.2f", si.getProduct().getDescription(),
+					si.getAmount(),si.getProduct().getPrice(), si.getSaleItemSubTotal());
+			
+			saleItemString.add(item);
+			
+		}
+		
+		return saleItemString;
 	}
 
-	public void addSaleItem(SaleItem item) {
+	public void addItem(String codProduct , int amount) {
+		
+		SaleItem item = new SaleItem(codProduct, amount);
 		this.items.add(item);
 	}
 
