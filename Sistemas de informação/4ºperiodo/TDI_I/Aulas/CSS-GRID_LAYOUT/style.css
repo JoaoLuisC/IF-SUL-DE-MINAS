@@ -3,10 +3,13 @@ html{
 }
 
 .grid-container{
+    height: 100vh;
     display: grid;
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto;
     background-color: rgb(87, 206, 166);
+    justify-content: center;
+    align-items: center
 }
 
 .item-grid{
@@ -14,4 +17,7 @@ html{
     background-color: rgba(166, 248, 221, 0.781);
     margin: 5px;
     border: 1px solid yellow;
+    width: 3em;
+    height: 20px;
+
 }
