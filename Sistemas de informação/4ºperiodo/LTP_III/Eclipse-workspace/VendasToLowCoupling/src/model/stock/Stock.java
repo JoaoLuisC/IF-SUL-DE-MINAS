@@ -1,14 +1,22 @@
 package model.stock;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import model.DataBase;
 
 public class Stock {
 
-	private ArrayList<StockItem> items;
+	private List<StockItem> items;
+	
 
-	public Stock(ArrayList<StockItem> items) {
-		this.items = items;
+	public Stock(List<StockItem> items) {
+		//vamos esperar do banco de dados
+		items = DataBase.stockItems();
 	}
+	
+	
+	
+	
 	
 	
 

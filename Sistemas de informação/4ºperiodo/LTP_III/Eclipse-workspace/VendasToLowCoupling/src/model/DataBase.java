@@ -1,6 +1,8 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import model.Payment.Cash;
@@ -28,6 +30,18 @@ public class DataBase {
 		paymmnets.put("cc", credit);
 		paymmnets.put("cd", new Debit(0));
 		paymmnets.put("c", new Cash(5));
+	}
+	
+	public List<StockItem> stockItems(){
+		
+		List<StockItem> items = new ArrayList<>();
+		
+		for (StockItems stockItem : this.stockItems.values()) {
+			items.add(StockItem);
+		}
+		
+		return items;
+		
 	}
 	
 	public static String[] getProductDescription(String key) {
