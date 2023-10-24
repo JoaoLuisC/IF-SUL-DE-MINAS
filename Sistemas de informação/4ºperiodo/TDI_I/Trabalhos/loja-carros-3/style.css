@@ -1,0 +1,190 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+
+   CSS RESET
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, b, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/*Estilização*/
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/*HEADER*/
+
+    /*HEADER TITULO*/
+
+    #Titulo{
+        width: 50%;
+        margin: auto;
+        margin-top: 0.6em;
+        margin-bottom: 0.4em;
+        text-align: center;
+        font-size: 3em;
+        font-weight: bold;
+        
+    }
+
+    /*HEADER LOGO*/
+            
+        #logo {
+            width: 9em; 
+            height: 9em; 
+            margin: auto; 
+            margin-bottom: 1.5em;  
+            text-align: center; 
+            background-color: #0c0e30;
+            border-radius: 50%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-imgsConfig-logo {
+            width: 8em; 
+            height: 8em; 
+            padding-top: 0.5em ;
+            display: block; 
+            margin: auto; 
+        }  
+
+/*MAIN*/
+.grid-container-main{
+    display: grid;
+    grid-template-columns: auto auto;
+    place-items: center;
+    margin-left:15%;
+    margin-right:15%;
+
+}
+
+.grid-container-card{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+/*CARDS*/
+
+.item-grid{
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+.card{
+    background-color: #0c0e30;
+    border-radius: 4px;
+    width: 90%;
+    height: 80%;
+    padding: 1em;
+    padding-bottom: 0;
+}
+
+.card-img{
+    max-width:100%;
+    max-height:150px;
+    border-radius:25% ;
+}
+
+.card-info{
+    width: 100%;
+    margin-left: 0.7em;
+}
+
+    /*COLOR P CARDS*/
+
+        .card-p, .card-valor{
+            color: #b2b2b2;
+        }
+        .destaque-p {
+            color: #febe01;
+        }
+
+    /*CONFIG P CARDS*/ 
+
+        .card-valor{
+            color: white;
+            font-size:1.3em;
+            font-weight: bold;
+
+        }
+        
+        #nome,
+        #ano,
+        #motor,
+        #cambio,
+        #kms{
+            font-size: 0.7em;
+            display: inline-block;
+            padding-bottom:1em ;
+        }
+
+        
+
+        
+
+    /*BUTTON CARDS*/
+
+        .card-button{
+            padding: 0.5em;
+            background-color: #febe01;
+            color: #332200;
+            text-align: center; 
+            border: none;
+            border-radius: 4px; 
+
+        }
+
+
+    /*CARD IMAGEM*/
+                    
+        .card-imgsConfig {
+            width: 100%;
+            max-height: 100%; 
+        }
