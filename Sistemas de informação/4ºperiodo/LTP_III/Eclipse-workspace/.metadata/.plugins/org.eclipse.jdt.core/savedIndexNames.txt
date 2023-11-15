@@ -5,3 +5,11 @@ INDEX VERSION 1.134+C:\Users\joaol\OneDrive\Documentos\IF_Repositorio\IF-SUL-DE-
 3927496509.index
 86847960.index
 1865797976.index
+<<<<<<< HEAD
+=======
+2244548477.index
+1907890700.index
+3859211760.index
+2109957524.index
+3484731968.index
+>>>>>>> a7a043d8d3b7017149dcde6914ff8a5c778144b1
