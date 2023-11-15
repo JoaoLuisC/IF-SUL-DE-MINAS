@@ -34,4 +34,7 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="model.DataBase"/>
     <fullyQualifiedTypeName name="model.sale.Sale"/>
+    <fullyQualifiedTypeName name="java.awt.TextField"/>
+    <fullyQualifiedTypeName name="java.awt.Label"/>
+    <fullyQualifiedTypeName name="java.awt.Button"/>
 </qualifiedTypeNameHistroy>
