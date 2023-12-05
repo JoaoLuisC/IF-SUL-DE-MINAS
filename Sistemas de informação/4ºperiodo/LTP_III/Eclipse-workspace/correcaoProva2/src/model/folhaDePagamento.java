@@ -1,9 +1,19 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import model.empregado.Employee;
+
 public class folhaDePagamento {
 
-	public folhaDePagamento() {
-		// TODO Auto-generated constructor stub
+	private List<Employee> employes;
+	
+	public Payroll() {
+		this.employes = new ArrayList<>();
 	}
+	
+	
+	
 
 }

@@ -29,9 +29,16 @@
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="model.Product"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="model.stock.StockItem"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="model.DataBase"/>
     <fullyQualifiedTypeName name="model.sale.Sale"/>
+    <fullyQualifiedTypeName name="model.empregado.employee"/>
+    <fullyQualifiedTypeName name="javax.swing.plaf.basic.BasicTextAreaUI"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="model.empregado.Employee"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="model.EmployeeFactory"/>
+    <fullyQualifiedTypeName name="model.br.BREmployeeFactory"/>
+    <fullyQualifiedTypeName name="model.us.USEmployeeFactory"/>
+    <fullyQualifiedTypeName name="model.Country"/>
 </qualifiedTypeNameHistroy>
