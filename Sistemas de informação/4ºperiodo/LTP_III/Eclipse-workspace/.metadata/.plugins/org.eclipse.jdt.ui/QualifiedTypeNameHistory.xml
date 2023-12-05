@@ -32,6 +32,7 @@
     <fullyQualifiedTypeName name="model.stock.StockItem"/>
     <fullyQualifiedTypeName name="model.DataBase"/>
     <fullyQualifiedTypeName name="model.sale.Sale"/>
+<<<<<<< HEAD
     <fullyQualifiedTypeName name="model.empregado.employee"/>
     <fullyQualifiedTypeName name="javax.swing.plaf.basic.BasicTextAreaUI"/>
     <fullyQualifiedTypeName name="java.util.List"/>
@@ -41,4 +42,9 @@
     <fullyQualifiedTypeName name="model.br.BREmployeeFactory"/>
     <fullyQualifiedTypeName name="model.us.USEmployeeFactory"/>
     <fullyQualifiedTypeName name="model.Country"/>
+=======
+    <fullyQualifiedTypeName name="java.awt.TextField"/>
+    <fullyQualifiedTypeName name="java.awt.Label"/>
+    <fullyQualifiedTypeName name="java.awt.Button"/>
+>>>>>>> 621fba7acfeaf3ab1d8f81d1d1eba8a8a9216631
 </qualifiedTypeNameHistroy>

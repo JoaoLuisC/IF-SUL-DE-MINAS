@@ -14,7 +14,15 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+<<<<<<< HEAD
 			<item value="C:\Users\15615141603\IFSulDeMinas\IF-SUL-DE-MINAS\Sistemas de informação\4ºperiodo\LTP_III\Eclipse-workspace\SimpleFactory"/>
+=======
+			<item value="C:\Users\joaol\Downloads\B-Tree-Visualization-JavaFX-main"/>
+			<item value="C:\Users\joaol\OneDrive\Área de Trabalho\projects"/>
+			<item value="C:\Users\joaol\OneDrive\Documentos\IF_Repositorio\IF-SUL-DE-MINAS\Sistemas de informação\4ºperiodo\EstruturaDeDados_ II\JavaSortSearch2023-main"/>
+			<item value="C:\Users\joaol\OneDrive\Documentos\IF_Repositorio\IF-SUL-DE-MINAS\Sistemas de informação\4ºperiodo\EstruturaDeDados_ II\B-Tree-master\ArvoreB"/>
+			<item value="C:\Users\joaol\OneDrive\Documentos\IF_Repositorio\IF-SUL-DE-MINAS\Sistemas de informação\4ºperiodo\EstruturaDeDados_ II\B-Tree-master"/>
+>>>>>>> 621fba7acfeaf3ab1d8f81d1d1eba8a8a9216631
 			<item value="C:\Users\15615141603\IFSulDeMinas\IF-SUL-DE-MINAS\Sistemas de informação\4ºperiodo\LTP_III\Eclipse-workspace\VendasHighCohesionToLowCoupling"/>
 			<item value="C:\Users\15615141603\IFSulDeMinas\IF-SUL-DE-MINAS\Sistemas de informação\4ºperiodo\LTP_III\Eclipse-workspace\VendasCreatorToHighCohesion"/>
 			<item value="C:\Users\15615141603\IFSulDeMinas\IF-SUL-DE-MINAS\Sistemas de informação\4ºperiodo\LTP_III\Eclipse-workspace\RevisaoPOO"/>
