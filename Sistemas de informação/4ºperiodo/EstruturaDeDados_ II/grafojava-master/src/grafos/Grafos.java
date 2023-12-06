@@ -1,26 +1,72 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+   MODELO PARA AULA
  */
 package grafos;
+
+import java.util.List;
+import java.util.Scanner;
 
 
 public class Grafos {
 
+     static int menuMetodos(){
+        Scanner scanner = new Scanner(System.in);
+        int op;
+        System.out.println("1-Adicionar Vertice");
+        System.out.println("2-Adicionar Aresta");
+        System.out.println("3-Imprime Grafo");
+        System.out.println("4-Alcance Grafo");
+        System.out.println("5-Busca em Profundidade [DFS]");
+        System.out.println("6-Busca em Largura [BFS]");
+        System.out.println("0-Sair");
+        op = scanner.nextInt();
+        return op;
+    }
+
     public static void main(String[] args) {
         Graph grafo = new Graph();
-        grafo.adicionarVertice(1);
-        grafo.adicionarVertice(2);
-        grafo.adicionarVertice(3);
-        grafo.adicionarVertice(4);
+        Scanner scanner = new Scanner(System.in);
+        int op=0;
+         grafo.carregarGrafo();
+        do{
+        op = menuMetodos();
+        switch(op){
+            case 1: System.out.println("Vertice:");
+                    int valor=scanner.nextInt();
+                    grafo.adicionarVertice(valor);
+            break;
+            case 2: System.out.println("Adjacencias:");
+                    int origem=scanner.nextInt();
+                    int destino=scanner.nextInt();
+                    System.out.println("Peso:");
+                    int peso = scanner.nextInt();
+                    grafo.adicionarAresta(origem, destino, peso);
+                    grafo.imprimirGrafo();
+            break;
+            case 3:
+                    grafo.imprimirGrafo();
+            break;
+            case 4: System.out.println("Vertices");
+                    System.out.println("Origem:");
+                     origem=scanner.nextInt();
+                     System.out.println("Destino:");
+                     destino=scanner.nextInt();
+                     if(grafo.alcance(origem, destino)==true)
+                         System.out.println("Existe caminho");
+                     else
+                         System.out.println("Não existe caminho");
+            break;         
+             case 5: System.out.println("DFS");
+                    System.out.println("Origem:");
+                    origem=scanner.nextInt();
+                    System.out.println(grafo.buscaProfundidade(origem));
+            break;        
+            case 0: System.out.println("Saindo");
+                    grafo.salvarGrafo();
+            break;
+        }// fim switch
+        }while(op!=0);
 
-        grafo.adicionarAresta(1, 2, 3);
-        grafo.adicionarAresta(1, 3, 5);
-        grafo.adicionarAresta(2, 4, 2);
-        grafo.adicionarAresta(3, 4, 1);
-
-        grafo.imprimirGrafo();
-        
     
     }
     
