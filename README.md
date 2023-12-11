@@ -3,11 +3,13 @@
 # Repositório Sistemas de Informação
 
 Este repositório abriga todos os materiais e conteúdos associados ao curso de Sistemas de Informação. Alguns trabalhos específicos estão disponíveis em repositórios dedicados a cada um deles.
-
+<br>
+<br>
 ## Estrutura Organizacional
 
 Os materiais estão organizados de maneira intuitiva, divididos por períodos e matérias, facilitando a localização de recursos específicos.
-
+<br>
+<br>
 ## Contato
 
 - João Luís Cardoso
