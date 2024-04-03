@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contador de números</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>Contando</h1>
+        </nav>
+    </header>
+
+    <main>
+        <div class="espacamento"></div>
+
+        <div>
+            <div id="msg">
+                <p>Digite os Números</p>
+            </div>
+
+            <div class="dados">
+                <div class="insert-dados">
+                    
+                    <input type="number" name="txt-numero" id="numero-inicial" placeholder=" Número Inicial">
+                    <input type="number" name="txt-numero" id="numero-final" placeholder=" Número Final">
+                    <input type="number" name="txt-numero" id="numero-passos" placeholder=" Número de Passos">
+                    <input id="btn-finalizar" type="button" value="Gerar!" onclick="gerarContagem()">
+                    <input id="btn-zerar" type="button" value="Zerar Dados" onclick="zerarDados()">
+                </div>
+
+                <div class="result-dados">
+                    <h3>Resultado:</h3>
+                    <select name="lista" id="resultado" size="6"></select>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

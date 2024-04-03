@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: rgb(65, 65, 65);
+    color: white;
+    align-items: center;
+    text-align: center;
+    height: 5em;
+    position: fixed;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+.espacamento{
+    padding-top: 7em;
+    height: 10px;
+}
+
+#msg{
+    width: 40%;
+    height: 2em;
+    text-align: center;
+    align-items: center;
+    margin: 0 30%;
+    border: 2px solid black;
+    border-radius: 1em;
+    padding: 1.3em 0 0.7em;
+    background-color: rgb(194, 194, 194);
+    font-size: 2em;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#image{
+    width: 80%;
+    height: 30em;
+    text-align: center;
+    align-items: center;
+    margin: 2em 10%;
+    border-radius: 1em;
+    background-color: rgb(168, 168, 168);
+    background-size: cover; /* Adicionado para cobrir toda a área */
+    background-position: center; /* Adicionado para centralizar a imagem */
+
+}
+
+
+
+

@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: rgb(65, 65, 65);
+    color: white;
+    align-items: center;
+    text-align: center;
+    height: 5em;
+    position: fixed;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.espacamento {
+    padding-top: 7em;
+    height: 10px;
+}
+
+#msg {
+    width: 40%;
+    height: 2em;
+    text-align: center;
+    align-items: center;
+    margin: 0 30%;
+    border: 2px solid black;
+    border-radius: 1em;
+    padding: 0 0 1em;
+    background-color: rgb(180, 180, 180);
+    font-size: 1.5em;
+    color: black;
+    font-weight: bold;
+}
+
+.dados {
+    width: 80%;
+    height: 17em;
+    text-align: center;
+    align-items: center;
+    margin: 2em 10%;
+    border: 2px solid black;
+    border-radius: 1em;
+    padding: 0 0 1em;
+    background-color: rgb(180, 180, 180);
+    font-size: 1.5em;
+    color: black;
+    font-weight: bold;
+}
+
+.dados {
+    display: flex;
+    flex-direction: row;
+}
+
+.insert-dados, .result-dados {
+    flex: 1;
+    width: 50%;
+    height: 100%;
+}
+
+.insert-dados {
+    border-right: 3px solid black;
+}
+
+#txt-numero {
+    width: 60%;
+    padding: 10px 0;
+    margin: 2em 20% 1em;
+    border: none;
+    color: rgb(5, 5, 5);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.insert-dados input[type="button"] {
+    width: 60%;
+    padding: 10px;
+    margin: 10px 20%;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.insert-dados input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+.result-dados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    border-left: 3px solid black;
+}
+
+.result-dados h3 {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.insert-dados h3 {
+    padding-top: 1em;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.result-dados select {
+    width: 60%;
+    padding: 1em;
+    height: 15em;
+    margin: 10px 20%;
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    cursor: pointer;
+}

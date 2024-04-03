@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Analisador de números</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>analisador de números </h1>
+        </nav>
+    </header>
+
+    <main>
+        <div class="espacamento"></div>
+
+        <div>
+            <div id="msg">
+                <p>Digite um Número entre 1 e 100</p>
+            </div>
+
+            <div class="dados">
+                <div class="insert-dados">
+                    <input type="number" name="txt-numero" id="txt-numero" placeholder=" Digite aqui">
+                    <input id="btn-adicionar" type="button" value="Adicionar" onclick="adicionar()">
+                    <input id="btn-finalizar" type="button" value="Finalizar" onclick="finalizar()">
+                    <p id="resultado-texto"></p>
+                </div>
+
+                <div class="result-dados">
+                    <h3>Dados</h3>
+                    <select name="lista" id="lista" size="6"></select>
+                    <input id="btn-zerar" type="button" value="Zerar Dados" onclick="zerarDados()">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
