@@ -69,6 +69,8 @@
 		<item key="updateQualifiedNames" value="false"/>
 		<item key="patterns" value="*"/>
 		<item key="renameSubpackages" value="true"/>
+		<item key="renameGetter" value="true"/>
+		<item key="renameSetter" value="true"/>
 	</section>
 	<section name="OverrideMethodDialog">
 		<item key="showtypes" value="true"/>

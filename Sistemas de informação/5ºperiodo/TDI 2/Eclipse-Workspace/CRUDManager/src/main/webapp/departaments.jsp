@@ -4,7 +4,7 @@
 <html>
 <head>
 <%@include file="base-head.jsp"%>
-<title>CRUD Manager - CEOs</title>
+<title>CRUD Manager - Departamentos</title>
 </head>
 <body>
 
@@ -21,13 +21,13 @@
 
 		<div id="top" class="row">
 			<div class="col-md-3">
-				<h3>CEOs</h3>
+				<h3>Departamentos</h3>
 			</div>
 
 			<div class="col-md-6">
 				<div class="input-group h2">
 					<input name="data[search]" class="form-control" id="search"
-						type="text" placeholder="Pesquisar CEOs"> <span
+						type="text" placeholder="Pesquisar Departamentos"> <span
 						class="input-group-btn">
 						<button class="btn btn-danger" type="submit">
 							<span class="glyphicon glyphicon-search"></span>
@@ -37,9 +37,9 @@
 			</div>
 
 			<div class="col-md-3">
-				<a href="/crud-manager/ceo/form"
+				<a href="/crud-manager/departaments/form"
 					class="btn btn-danger pull-right h2"><span
-					class="glyphicon glyphicon-briefcase"></span>&nbspAdicionar CEO</a>
+					class="glyphicon glyphicon-briefcase"></span>&nbspAdicionar Departamento</a>
 			</div>
 		</div>
 
@@ -53,32 +53,32 @@
 					<thead>
 						<tr>
 							<th>Nome</th>
-							<th>Sexo</th>
-							<th>Email</th>
-							<th>Telefone</th>
-							<th>Empresa</th>
+							<th>Descrição</th>
+							<th>Chefe do  Departamento</th>
+							<th>Quantidade de Empregados</th>
+							<th>Ramal do Departamento</th>
 							<th>Editar</th>
 							<th>Excluir</th>
 						</tr>
 					</thead>
 
 					<tbody>
-						<c:forEach var="ceo" items="${ceos}">
+						<c:forEach var="departament" items="${departaments}">
 							<tr>
-								<td>${ceo.getName()}</td>
-								<td>${ceo.getGender()}</td>
-								<td>${ceo.getEmail()}</td>
-								<td>${ceo.getFone()}</td>
-								<td>${ceo.getCompany().getName()}</td>
+								<td>${departament.getName()}</td>
+								<td>${departament.getDescription()}</td>
+								<td>${departament.getDepartmentHead().getName}</td>
+								<td>${departament.getEmployeeCount()}</td>
+								<td>${departament.getPhone()}</td>
 								
 								<td class="actions"><a class="btn btn-info btn-xs"
-									href="${pageContext.request.contextPath}/ceo/update?ceoId=${ceo.getId()}">
+									href="${pageContext.request.contextPath}/departaments/update?departamentsId=${departament.getId()}">
 										<span class="glyphicon glyphicon-edit"></span>
 								</a></td>
 
 								<td class="actions"><a
 									class="btn btn-danger btn-xs modal-remove"
-									data-ceo-id="${ceo.getId()}" data-ceo-name="${ceo.getName()}"
+									data-departament-id="${departament.getId()}" data-departament-name="${departament.getName()}"
 									data-toggle="modal" data-target="#delete-modal" href="#"> <span
 										class="glyphicon glyphicon-trash"></span>
 								</a></td>
@@ -115,12 +115,12 @@
 			// ao clicar no delete de algum ceo, pega o nome do ceo, 
 			// o id do ceo e a ação (delete) e envia para o modal 
 			$(".modal-remove").click(function() {
-				var ceoName = $(this).attr('data-ceo-name');
-				var ceoId = $(this).attr('data-ceo-id');
-				$(".modal-body #hiddenValue").text("o CEO '" + ceoName + "'");
-				$("#id").attr("value", ceoId);
-				$("#entityName").attr("value", ceoName);
-				$("#form").attr("action", "ceo/delete");
+				var departamentName = $(this).attr('data-departament-name');
+				var departamentId = $(this).attr('data-departament-id');
+				$(".modal-body #hiddenValue").text("o Departamento '" + departamentName + "'");
+				$("#id").attr("value", departamentId);
+				$("#entityName").attr("value", departamentName);
+				$("#form").attr("action", "departaments/delete");
 			})
 		});
 	</script>

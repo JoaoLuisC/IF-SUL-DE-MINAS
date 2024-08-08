@@ -19,7 +19,7 @@
 				<li><a href="${pageContext.request.contextPath}"><span class="glyphicon glyphicon-pencil" /><strong>&nbspPosts</strong></a></li>
 				<li><a href="${pageContext.request.contextPath}/companies"><span class="glyphicon glyphicon-pushpin" /><strong>&nbspEmpresas</strong></a></li>
 				<li><a href="${pageContext.request.contextPath}/sellers"><span class="glyphicon glyphicon-usd" /><strong>&nbspVendedores</strong></a></li>
-				<li><a href="${pageContext.request.contextPath}/ceos"><span class="glyphicon glyphicon-briefcase"/><strong>&nbspCEOs</strong></a></li>
+				<li><a href="${pageContext.request.contextPath}/departaments"><span class="glyphicon glyphicon-briefcase"/><strong>&nbspDepartamentos</strong></a></li>
 				<li class="dropdown">
 			        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><strong>Perfil</strong>
 			        <span class="caret"></span></a>

@@ -3,73 +3,59 @@ package model;
 public class Departaments {
 
 	private int id;
-	private String name, email, fone, gender;
-	private Company company;
-
+	private String name, description, phone;
+	private int employeeCount;
+	private User departmentHead;
+	
 	public Departaments() {
 		this(0);
 	}
-
+	
+	
 	public Departaments(int id) {
 		this.id = id;
 		setName("");
-		setEmail("");
-		setGender("");
-		setFone("");
+		setDescription("");
+		setPhone("");
+		setEmployeeCount(0);
 	}
-
+	
+	
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 	public String getName() {
 		return name;
 	}
-
-	public void setName(String nome) {
-		this.name = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
-
-	public String getEmail() {
-		return email;
+	public String getDescription() {
+		return description;
 	}
-
-	public void setEmail(String email) {
-		this.email = email;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-
-	public String getFone() {
-		return fone;
+	public String getPhone() {
+		return phone;
 	}
-
-	public void setFone(String fone) {
-		this.fone = fone;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-
-	public String getGender() {
-		return gender;
+	public int getEmployeeCount() {
+		return employeeCount;
 	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setEmployeeCount(int employee_count) {
+		this.employeeCount = employee_count;
 	}
-
-	public Company getCompany() {
-		return company;
+	public User getDepartmentHead() {
+		return departmentHead;
 	}
-
-	public void setCompany(Company company) {
-		this.company = company;
-	}
-
-	@Override
-	public String toString() {
-		return "ChiefExecutiveOfficer [id=" + id + ", name=" + name + ", email=" + email + ", fone=" + fone
-				+ ", gender=" + gender + ", company=" + company + "]";
+	public void setDepartmentHead(User department_head) {
+		this.departmentHead = department_head;
 	}
 		
 }
