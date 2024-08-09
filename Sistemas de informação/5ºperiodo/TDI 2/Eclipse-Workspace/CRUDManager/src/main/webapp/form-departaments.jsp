@@ -17,7 +17,7 @@
 		<form action="${pageContext.request.contextPath}/departaments/${action}"
 			method="POST">
 
-			<input type="hidden" name="departamentsId" value="${departamentsToEdit.getId()}">
+			<input type="hidden" name="departaments_id" value="${departamentsToEdit.getId()}">
 
 			<div class="row">
 				<div class="form-group col-md-4">

@@ -110,7 +110,7 @@ public class MySQLDepartamentsDAO implements DepartamentsDAO {
 
 		UserDAO userDAO = DAOFactory.createDAO(UserDAO.class);
 
-		User user = userDAO.findById(db.getInt("departament_head"));
+		User user = userDAO.findById(db.getInt("department_head"));
 
 		departaments.setDepartmentHead(user);
 

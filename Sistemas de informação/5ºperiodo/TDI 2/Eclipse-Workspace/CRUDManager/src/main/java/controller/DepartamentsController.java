@@ -59,6 +59,7 @@ public class DepartamentsController extends HttpServlet {
 			break;
 		}
 		case "/crud-manager/departaments/update": {
+			System.out.println("Entrou DoPost Update");
 			updateDepartament(req);
 			ControllerUtil.redirect(resp, req.getContextPath() + "/departaments");
 			break;
@@ -181,7 +182,9 @@ public class DepartamentsController extends HttpServlet {
 		try {
 			departaments = dao.listAll();
 		} catch (ModelException e) {
-			ControllerUtil.errorMessage(req, "Erro ao carregar os Departamentos.");
+			ControllerUtil.errorMessage(req, "Erro ao carregar os Departamentos." + e);
+			e.printStackTrace();
+			
 		}
 
 		req.setAttribute("departaments", departaments);

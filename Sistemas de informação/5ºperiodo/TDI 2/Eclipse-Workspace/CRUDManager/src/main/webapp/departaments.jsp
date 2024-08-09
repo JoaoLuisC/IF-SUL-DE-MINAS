@@ -67,7 +67,7 @@
 							<tr>
 								<td>${departament.getName()}</td>
 								<td>${departament.getDescription()}</td>
-								<td>${departament.getDepartmentHead().getName}</td>
+								<td>${departament.getDepartmentHead().getName()}</td>
 								<td>${departament.getEmployeeCount()}</td>
 								<td>${departament.getPhone()}</td>
 								
