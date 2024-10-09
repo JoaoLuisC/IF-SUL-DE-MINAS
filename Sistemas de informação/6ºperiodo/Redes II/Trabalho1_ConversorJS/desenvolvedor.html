@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvedor - Conversão de Bases</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Conversão de Bases</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="conversao.html">Conversão</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Sobre o Desenvolvedor</h1>
+        <p>Nome: <strong>João Luís Cardoso</strong></p>
+        <h3>Como foi feita a conversão?</h3>
+        <p>
+            Para cada base numérica, utilizamos as funções de JavaScript que permitem a conversão de números:
+        </p>
+        <ul>
+            <li><strong>Decimal:</strong> Utilizamos o método <code>toString(base)</code> para converter um número decimal para as bases binária, hexadecimal e octal.</li>
+            <li><strong>Binário:</strong> Usamos <code>parseInt(valor, 2)</code> para converter o binário para decimal e depois os métodos <code>toString(16)</code> e <code>toString(8)</code> para hexadecimal e octal.</li>
+            <li><strong>Hexadecimal:</strong> O hexadecimal é convertido para decimal usando <code>parseInt(valor, 16)</code>, e em seguida convertido para binário e octal usando <code>toString(2)</code> e <code>toString(8)</code>.</li>
+            <li><strong>Octal:</strong> O octal é convertido para decimal com <code>parseInt(valor, 8)</code> e convertido para binário e hexadecimal com <code>toString(2)</code> e <code>toString(16)</code>.</li>
+        </ul>
+        <p>
+            Essas conversões foram implementadas em um arquivo JavaScript que controla as interações com o modal para mostrar os resultados de forma organizada.
+        </p>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
