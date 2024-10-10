@@ -6,6 +6,7 @@
     <title>Desenvolvedor - Conversão de Bases</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -22,6 +23,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="conversao.html">Conversão</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="color:white">Desenvolvedor</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -32,16 +36,19 @@
         <p>Nome: <strong>João Luís Cardoso</strong></p>
         <h3>Como foi feita a conversão?</h3>
         <p>
-            Para cada base numérica, utilizamos as funções de JavaScript que permitem a conversão de números:
+            Neste projeto, as conversões entre as diferentes bases numéricas (Decimal, Binário, Hexadecimal e Octal) foram implementadas manualmente, sem o uso de bibliotecas ou funções nativas que realizam essas conversões automaticamente.
+        </p>
+        <p>
+            Para cada conversão, foram desenvolvidos algoritmos que simulam os processos matemáticos envolvidos, como divisão sucessiva para conversões de decimal para outras bases e somas ponderadas para conversões para decimal. Abaixo, explico como foi feita cada conversão:
         </p>
         <ul>
-            <li><strong>Decimal:</strong> Utilizamos o método <code>toString(base)</code> para converter um número decimal para as bases binária, hexadecimal e octal.</li>
-            <li><strong>Binário:</strong> Usamos <code>parseInt(valor, 2)</code> para converter o binário para decimal e depois os métodos <code>toString(16)</code> e <code>toString(8)</code> para hexadecimal e octal.</li>
-            <li><strong>Hexadecimal:</strong> O hexadecimal é convertido para decimal usando <code>parseInt(valor, 16)</code>, e em seguida convertido para binário e octal usando <code>toString(2)</code> e <code>toString(8)</code>.</li>
-            <li><strong>Octal:</strong> O octal é convertido para decimal com <code>parseInt(valor, 8)</code> e convertido para binário e hexadecimal com <code>toString(2)</code> e <code>toString(16)</code>.</li>
+            <li><strong>Decimal para outras bases:</strong> O número decimal é repetidamente dividido pela base alvo (2, 8 ou 16), armazenando os restos e formando o resultado final a partir do último resto para o primeiro.</li>
+            <li><strong>Binário para Decimal:</strong> Cada dígito do número binário é multiplicado pela potência de 2 correspondente à sua posição, somando todos os resultados para obter o decimal.</li>
+            <li><strong>Hexadecimal para Decimal:</strong> Similar ao binário, cada dígito hexadecimal é convertido para seu valor decimal equivalente, multiplicado por potências de 16 e somado para formar o número final.</li>
+            <li><strong>Octal para Decimal:</strong> Assim como nas outras bases, os dígitos do octal são multiplicados por potências de 8 e somados.</li>
         </ul>
         <p>
-            Essas conversões foram implementadas em um arquivo JavaScript que controla as interações com o modal para mostrar os resultados de forma organizada.
+            Essas conversões foram feitas manualmente em JavaScript, com cada base numérica tendo uma função dedicada para garantir a correção e adequação ao propósito da atividade. O modal foi usado para exibir os resultados de forma clara, separando cada conversão em blocos distintos.
         </p>
     </div>
 
