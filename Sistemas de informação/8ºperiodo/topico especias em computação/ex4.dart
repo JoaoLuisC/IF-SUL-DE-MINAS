@@ -17,7 +17,7 @@ void main() {
   };
 
   print('--- Cardápio Salgados ---');
-  salgados.forEach((k, v) => print('\$k - ${v['nome']} : R\$${v['preco']}'));
+  salgados.forEach((k, v) => print('$k - ${v['nome']} : R\$${v['preco']}'));
 
   stdout.write('Escolha o código do salgado: ');
   final codSalgado = int.tryParse(stdin.readLineSync() ?? '');
@@ -34,7 +34,7 @@ void main() {
   }
 
   print('\n--- Cardápio Bebidas ---');
-  bebidas.forEach((k, v) => print('\$k - ${v['nome']} : R\$${v['preco']}'));
+  bebidas.forEach((k, v) => print('$k - ${v['nome']} : R\$${v['preco']}'));
 
   stdout.write('Escolha o código da bebida: ');
   final codBebida = int.tryParse(stdin.readLineSync() ?? '');
