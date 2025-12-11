@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/styleForSetupPages">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundTollBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/backgroundTollBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/addBillImageLogo"
+                    android:layout_width="149dp"
+                    android:layout_height="54dp"
+                    android:background="@drawable/button_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/text_logo" />
+
+                <ImageButton
+                    android:id="@+id/btnBackToList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@color/transparent"
+                    app:layout_constraintEnd_toStartOf="@+id/addBillImageLogo"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/baseline_arrow_back_24" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/detailTxtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:text="Nome da Conta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <TextView
+        android:id="@+id/txtValor"
+        style="@style/styleForTextViews"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="72dp"
+        android:text="Valor:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailTxtName" />
+
+    <TextView
+        android:id="@+id/detailTxtValue"
+        style="@style/styleForTextViews"
+        android:text="R$ 00,00"
+        app:layout_constraintEnd_toEndOf="@+id/detailTxtDateBill"
+        app:layout_constraintTop_toTopOf="@+id/txtValor" />
+
+    <TextView
+        android:id="@+id/txtDataDaConta"
+        style="@style/styleForTextViews"
+        android:layout_marginTop="56dp"
+        android:text="Data da Conta:"
+        app:layout_constraintStart_toStartOf="@+id/txtValor"
+        app:layout_constraintTop_toBottomOf="@+id/txtValor" />
+
+    <TextView
+        android:id="@+id/detailTxtDateBill"
+        style="@style/styleForTextViews"
+        android:text="00/00/0000"
+        app:layout_constraintEnd_toEndOf="@+id/detailTxtDescription"
+        app:layout_constraintTop_toTopOf="@+id/txtDataDaConta" />
+
+    <TextView
+        android:id="@+id/txtDescricao"
+        style="@style/styleForTextViews"
+        android:layout_marginTop="76dp"
+        android:text="Descrição:"
+        app:layout_constraintStart_toStartOf="@+id/txtValor"
+        app:layout_constraintTop_toBottomOf="@+id/txtDataDaConta" />
+
+    <TextView
+        android:id="@+id/detailTxtDescription"
+        android:layout_width="310dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/button_background"
+        android:justificationMode="inter_word"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dignissim velit et nisl aliquet, quis tempor lacus pretium. Duis a malesuada diam. Ut ac dolor tortor. Phasellus posuere, enim sit amet sollicitudin lobortis, dolor nibh feugiat diam, at tincidunt lectus enim ut nunc. Nunc pulvinar, diam nec dapibus fringilla, est turpis ullamcorper ante, congue bibendum nunc lorem ut leo. Mauris mattis dui sodales, mattis diam vel, tincidunt arcu. Suspendisse potenti. Nunc vel arcu nulla. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut egestas, nisl id cursus egestas, mi neque v"
+        app:layout_constraintStart_toStartOf="@+id/txtDescricao"
+        app:layout_constraintTop_toTopOf="@+id/txtDescricao" />
+
+
+    <ImageButton
+        android:id="@+id/detailBtnShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/btn_share"
+        app:layout_constraintEnd_toEndOf="@+id/detailTxtDescription"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintTop_toBottomOf="@+id/detailTxtDescription"
+        app:srcCompat="@drawable/baseline_share_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

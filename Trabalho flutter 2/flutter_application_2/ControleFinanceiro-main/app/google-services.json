@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "708259359979",
+    "project_id": "financial-management-8c76d",
+    "storage_bucket": "financial-management-8c76d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708259359979:android:a144e6194717a1aaad62ae",
+        "android_client_info": {
+          "package_name": "br.edu.ifsuldeminas.mch.controlefinanceiro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARTOymP3cAizHns2CNE-QjV73vLLPYY5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/styleForSetupPages">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/backgroundTollBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/backgroundTollBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/addBillImageLogo"
+                    android:layout_width="149dp"
+                    android:layout_height="54dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/button_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.7"
+                    app:srcCompat="@drawable/text_logo" />
+
+                <Button
+                    android:id="@+id/addTransactionBtnList"
+                    style="@style/styleForBtnTransparent"
+                    android:layout_marginEnd="28dp"
+                    android:text="Listagem"
+                    app:layout_constraintBottom_toBottomOf="@+id/addBillImageLogo"
+                    app:layout_constraintEnd_toStartOf="@+id/addTransactionBtnAdd"
+                    app:layout_constraintTop_toTopOf="@+id/addBillImageLogo"
+                    app:layout_constraintVertical_bias="0.4" />
+
+                <Button
+                    android:id="@+id/addTransactionBtnAdd"
+                    style="@style/styleForBtnTransparent"
+                    android:layout_marginEnd="16dp"
+                    android:text="Adicionar"
+                    app:layout_constraintBottom_toBottomOf="@+id/addTransactionBtnList"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/addTransactionBtnList"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <EditText
+        android:id="@+id/editTextAmount"
+        android:layout_width="@dimen/addBillWidthInput"
+        android:layout_height="@dimen/addBillHeightInput"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/button_background"
+        android:ems="10"
+        android:hint="Valor da Transação"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
+
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <EditText
+        android:id="@+id/editTextDesc"
+        android:layout_width="@dimen/addBillWidthInput"
+        android:layout_height="@dimen/addBillHeightInput"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_background"
+        android:ems="10"
+        android:hint="Descrição da Transação"
+        android:inputType="text"
+        android:textColor="@color/black"
+
+        app:layout_constraintEnd_toEndOf="@+id/editTextAmount"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextAmount"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAmount" />
+
+    <EditText
+        android:id="@+id/editTextType"
+        android:layout_width="@dimen/addBillWidthInput"
+        android:layout_height="@dimen/addBillHeightInput"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/button_background"
+        android:ems="10"
+        android:hint="Tipo de Transação"
+        android:inputType="text"
+
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDesc"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextDesc"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDesc" />
+
+
+    <Spinner
+        android:id="@+id/spinnerIsento"
+        android:layout_width="@dimen/addBillWidthInput"
+        android:layout_height="@dimen/addBillHeightInput"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/button_background"
+        android:hint="Isento"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDesc"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextType"
+        app:layout_constraintTop_toBottomOf="@+id/editTextType" />
+
+    <Button
+        android:id="@+id/btnAddTransaction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="80dp"
+        android:backgroundTint="@color/backgroundTollBar"
+        android:text="Adicionar"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerIsento"
+        app:layout_constraintStart_toStartOf="@+id/spinnerIsento"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerIsento" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="21dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerIsento"
+        app:layout_constraintEnd_toEndOf="@+id/spinnerIsento"
+        app:layout_constraintTop_toTopOf="@+id/spinnerIsento"
+        app:srcCompat="@drawable/baseline_keyboard_arrow_down_24" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

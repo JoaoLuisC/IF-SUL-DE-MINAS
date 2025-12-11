@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/styleForSetupPages"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/LoginMainImage"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/login_descriptionImagem"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/text_logo" />
+
+    <TextView
+        android:id="@+id/LoginPage_TextUser"
+        style="@style/styleForLoginPageTextsForInputs"
+        android:layout_marginStart="@dimen/loginMenuMarginStart"
+        android:layout_marginTop="4dp"
+        android:text="@string/login_textUser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginMainImage" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginMenuInputName"
+        style="@style/styleForLoginPageInputText"
+        app:layout_constraintStart_toStartOf="@+id/LoginPage_TextUser"
+        app:layout_constraintTop_toBottomOf="@+id/LoginPage_TextUser">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="@dimen/loginMenuInputButtonWidth"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:textColor="@color/black"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/LoginPage_TextPassword"
+        style="@style/styleForLoginPageTextsForInputs"
+        android:layout_marginTop="20dp"
+        android:text="@string/login_textPassword"
+        app:layout_constraintStart_toStartOf="@+id/loginMenuInputName"
+        app:layout_constraintTop_toBottomOf="@+id/loginMenuInputName" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginMenuInputPassword"
+        style="@style/styleForLoginPageInputText"
+        app:layout_constraintStart_toStartOf="@+id/LoginPage_TextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/LoginPage_TextPassword">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="@dimen/loginMenuInputButtonWidth"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:background="@drawable/button_background"
+            android:inputType="textPassword"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/loginCheckBoxRememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/login_checkBoxText"
+        app:layout_constraintStart_toStartOf="@+id/loginMenuInputPassword"
+        app:layout_constraintTop_toBottomOf="@+id/loginMenuInputPassword" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginMenuButtonEnter"
+        android:layout_width="@dimen/loginMenuInputButtonWidth"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:background="@drawable/button_background"
+        android:text="@string/login_textButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/loginCheckBoxRememberMe"
+        app:layout_constraintTop_toBottomOf="@+id/loginCheckBoxRememberMe"
+        app:layout_constraintVertical_bias="0.479" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

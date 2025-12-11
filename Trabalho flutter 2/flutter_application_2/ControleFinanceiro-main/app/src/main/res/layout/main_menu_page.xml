@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/styleForSetupPages">
+
+    <!-- AppBar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/backgroundTollBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Controle Financeiro"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnLogout"
+                    app:layout_constraintHorizontal_bias="0.167"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.567" />
+
+                <ImageButton
+                    android:id="@+id/btnLogout"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:contentDescription="Sair"
+                    android:src="@drawable/baseline_logout_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.551" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="279dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        app:srcCompat="@drawable/text_logo" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnListBills"
+        android:layout_width="@dimen/mainMenuInputButtonWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/button_background"
+        android:text="Lista De Contas"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/btnAddTransactions"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddTransactions" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnListTransactions"
+        android:layout_width="@dimen/mainMenuInputButtonWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/button_background"
+        android:text="Lista De Transações"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/btnListBills"
+        app:layout_constraintTop_toBottomOf="@+id/btnListBills" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAddTransactions"
+        android:layout_width="@dimen/mainMenuInputButtonWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/button_background"
+        android:padding="10dp"
+        android:text="Adicionar Transação"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/btnAddBills"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddBills" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAddBills"
+        android:layout_width="@dimen/mainMenuInputButtonWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/button_background"
+        android:padding="10dp"
+        android:text="Adicionar Conta"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCoinsList"
+        android:layout_width="@dimen/mainMenuInputButtonWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/button_background"
+        android:text="Cotação de Moedas"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/btnListTransactions"
+        app:layout_constraintTop_toBottomOf="@+id/btnListTransactions" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

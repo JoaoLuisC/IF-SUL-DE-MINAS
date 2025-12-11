@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Dimens Pagina login_page.xml -->
+    <dimen name="loginMenuImage_top_margin">40dp</dimen>
+    <dimen name="loginMenuTextSize">20sp</dimen>
+    <dimen name="loginMenuMarginStart">60dp</dimen>
+    <dimen name="loginMenuInputButtonWidth">250dp</dimen>
+
+    <!-- Dimens Pagina main_menu_page.xml -->
+    <dimen name="mainMenuInputButtonWidth">250dp</dimen>
+    <dimen name="mainMenuMarginStart">60dp</dimen>
+    <dimen name="addBillWidthInput">300dp</dimen>
+    <dimen name="addBillHeightInput">50dp</dimen>
+
+</resources>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ControleFinanceiro</string>
+
+    <!--  Strings Pagina login_page.xml  -->
+    <string name="login_textUser">Nome:</string>
+    <string name="login_textPassword">Senha:</string>
+    <string name="login_textButton">Entrar</string>
+    <string name="login_hintInsertPassword">Inserir Senha</string>
+    <string name="login_hintInsertName">Inserir Nome de Usuario</string>
+    <string name="login_descriptionImagem">Logo Financial Managemente</string>
+    <string name="login_checkBoxText">Mantenha-me Conectado</string>
+
+    <!--  Strings Pagina main_menu_page.xml  -->
+
+
+
+</resources>

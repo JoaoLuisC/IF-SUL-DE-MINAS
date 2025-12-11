@@ -1,0 +1,39 @@
+name: flutter_application_2
+description: "Controle Financeiro - Migração de Android Nativo para Flutter"
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: ^3.10.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Gerenciamento de Estado
+  provider: ^6.1.1
+  
+  # Banco de Dados Local (via SharedPreferences - funciona em todas plataformas)
+  shared_preferences: ^2.2.2
+  
+  # Requisições HTTP
+  dio: ^5.4.0
+  
+
+  
+  # Gráficos
+  fl_chart: ^0.66.0
+  
+  # Ícones
+  font_awesome_flutter: ^10.6.0
+  
+  # Utilitários
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
